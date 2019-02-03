@@ -1,0 +1,63 @@
+#bugerbuilder-container {
+  /* width: 1300px !important; */
+  margin-top: 15em;
+}
+
+#burgerbuilder-left-menu {
+  margin-top: 4em;
+}
+
+.burgerbuilder-left-item-icon {
+  color: black !important;
+  padding: 10px;
+}
+
+#burgerbuilder-left-home {
+  font-size: 3em !important;
+  /* margin-bottom: 0.5em !important; */
+}
+
+.burgerbuilder-left-icon {
+  height: 40px;
+  width: 40px;
+  margin: 0 !important;
+  background-color: transparent !important;
+  color: black !important;
+  border-radius: 0% !important;
+  box-shadow: none;
+  padding: 0 0 0 0 !important
+}
+
+.burgerbuilder-left-icon:hover {
+  background-color: #373737 !important;
+  color: white !important;
+}
+
+.ui.list>.item {
+  padding: 0 !important;
+}
+
+#burgerbuilder-right-step-1 {
+  transform: translate(0, 0);
+}
+
+#burgerbuilder-right-step-2 {
+  transform: translate(0, -34em);
+}
+
+#burgerbuilder-right-step-3 {
+  transform: translate(0, -71.55em);
+}
+
+#burgerbuilder-right-step-4 {
+  transform: translate(0, -107em);
+}
+
+.burgerbuilder-right-steps {
+  transition: transform 0.5s;
+}
+
+.burgerbuilder-right-step-opacity {
+  opacity: 0.3;
+  pointer-events: none;
+}
