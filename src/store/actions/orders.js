@@ -1,4 +1,4 @@
-mport * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from '../actions/actionTypes';
 
 export const orderAdded = (orderDetails, burgerIngredients, burgerPrice) => {
   return {
