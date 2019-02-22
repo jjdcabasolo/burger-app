@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Container, Menu } from 'semantic-ui-react';
 
-// import logo from '../../../assets/images/burger-logo.png';
 import './Toolbar.css';
 import { Slide } from 'react-reveal';
 

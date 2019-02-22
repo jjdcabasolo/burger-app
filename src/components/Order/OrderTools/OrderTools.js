@@ -163,7 +163,7 @@ const orderTools = (props) => {
                   props.toggleTools();
                   const position = props.isOpen ? '288px' : '0px';
                   document.getElementById('order-tools-mobile').style.transform = 'translate(' + position + ')';
-                }}
+                }}  
                 style={{ marginRight: '16px' }}
               />
               {ingredientSort(false)}

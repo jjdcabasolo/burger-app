@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import SidebarMobile from './components/Layout/SidebarMobile/SidebarMobile';
-import Home from './components/Home/Home';
+import Home from './containers/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
