@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 
-import { Segment, Visibility } from 'semantic-ui-react';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 import './Home.css';
@@ -29,10 +28,11 @@ class Home extends PureComponent {
     return (
       <div >
         <ReactFullpage
-          render={({ state, fullpageApi }) => {
+          render={({ _, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
                 <HomePages 
+                  fullpageApi={fullpageApi}
                   animateOn={this.animateOn}
                   animateOff={this.animateOff}
                   activeItem={this.props.activeItem}

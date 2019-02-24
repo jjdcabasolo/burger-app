@@ -25,11 +25,11 @@ const receipt = (props) => {
 
         {props.form ?
           <Grid>
-            <Grid.Column width={6} textAlign='right' verticalAlign='middle'>
+            <Grid.Column width={5} textAlign='right' verticalAlign='middle'>
               <span className='receipt-total'>{'$ ' + parseFloat(props.price).toFixed(2)}</span>
               <p className='font-normal'>cost</p>
             </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={11}>
               {props.inputMap.map((element) => {
                 return (
                   <List id='receipt' inverted={props.isNight}>
@@ -53,7 +53,7 @@ const receipt = (props) => {
         }
 
         <Divider className='receipt-divider-space' />
-        <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero, quis iaculis velit. In in massa ante. Sed consectetur mollis lorem, sed bibendum erat volutpat non. Aenean enim purus, ornare vel porta vel, malesuada vitae massa. Integer volutpat porta enim quis maximus. </p>
+        <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero. </p>
       </Segment>
 
       <Button.Group attached='bottom'>

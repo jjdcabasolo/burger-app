@@ -9,10 +9,9 @@ import Aux from '../../../hoc/Auxilliary';
 const introduction = (props) => {
   const contents = [
     {
-      title: "1-title",
+      key: "1-title",
       content: (
         <Header
-          // inverted={props.isNight}
           as='h1'
           style={{
             fontSize: '6em',
@@ -27,10 +26,9 @@ const introduction = (props) => {
       ),
     },
     {
-      title: "1-subtitle",
+      key: "1-subtitle",
       content: (
         <Header
-          // inverted={props.isNight}
           as='h2'
           style={{
             fontSize: '2.25em',
@@ -45,11 +43,10 @@ const introduction = (props) => {
       ),
     },
     {
-      title: "1-content",
+      key: "1-content",
       content: (
         <Fade delay={2500}>
           <Header
-            // inverted={props.isNight}
             content='Your do-it-yourself burger delivered right in front of your doorstep!'
             style={{
               fontSize: '1.5em',
@@ -63,7 +60,7 @@ const introduction = (props) => {
       ),
     },
     {
-      title: "1-start-button",
+      key: "1-start-button",
       content: (
         <Fade delay={3000}>
           <Link to='/builder'>
@@ -93,7 +90,11 @@ const introduction = (props) => {
     <Aux>
       {
         contents.map((element) => {
-          return element.content;
+          return (
+            <Aux key={element.key}>
+              {element.content}
+            </Aux>
+          );
         })
       }
     </Aux>

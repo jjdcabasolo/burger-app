@@ -5,10 +5,10 @@ import { Fade } from 'react-reveal';
 
 import Aux from '../../../hoc/Auxilliary';
 
-const ingredientComponent = (props) => {
+const ingredientComponent = () => {
   const contents = [
     {
-      title: '4-title',
+      key: '4-title',
       content: (
         <Fade top>
           <Divider
@@ -27,7 +27,7 @@ const ingredientComponent = (props) => {
       ),
     },
     {
-      title: '4-content-grid',
+      key: '4-content-grid',
       content: (
         <Grid stackable centered columns='equal'>
           <Grid.Row>
@@ -86,7 +86,7 @@ const ingredientComponent = (props) => {
       ),
     },
     {
-      title: '4-content',
+      key: '4-content',
       content: (
         <Fade bottom delay={3000}>
           <Header
@@ -106,9 +106,14 @@ const ingredientComponent = (props) => {
 
   return (
     <Aux>
-      {contents.map((element) => {
-        return element.content;
-      })
+      {
+        contents.map((element) => {
+          return (
+            <Aux key={element.key}>
+              {element.content}
+            </Aux>
+          );
+        })
       }
     </Aux>
   );

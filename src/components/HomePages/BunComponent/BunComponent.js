@@ -5,15 +5,14 @@ import { Fade } from 'react-reveal';
 
 import Aux from '../../../hoc/Auxilliary';
 
-const theBun = (props) => {
+const bunComponent = () => {
   const contents = [
     {
-      title: '3-title',
+      key: '3-title',
       content: (
         <Fade top>
           <Divider
             as='h2'
-            // inverted={this.props.isNight}
             className='header primary-font'
             content='The Bun'
             horizontal
@@ -27,7 +26,7 @@ const theBun = (props) => {
       ),
     },
     {
-      title: '3-content-bread-top',
+      key: '3-content-bread-top',
       content: (
         <Fade top delay={500}>
           <div className="BreadTop">
@@ -42,7 +41,7 @@ const theBun = (props) => {
       ),
     },
     {
-      title: '3-content-bread-bottom',
+      key: '3-content-bread-bottom',
       content: (
         <Fade bottom delay={500}>
           <div className="BreadBottom"></div>
@@ -50,11 +49,10 @@ const theBun = (props) => {
       ),
     },
     {
-      title: '3-content',
+      key: '3-content',
       content: (
         <Fade bottom delay={1500}>
           <Header
-            // inverted={this.props.isNight}
             content='Bread formed into rounded bun shape, split, and sandwiched to a stack of organic burger ingredients topped with fresh sesame seeds.'
             style={{
               marginTop: '2em',
@@ -70,12 +68,17 @@ const theBun = (props) => {
 
   return (
     <Aux>
-      {contents.map((element) => {
-        return element.content;
-      })
+      {
+        contents.map((element) => {
+          return (
+            <Aux key={element.key}>
+              {element.content}
+            </Aux>
+          );
+        })
       }
     </Aux>
   );
 }
 
-export default theBun;
+export default bunComponent;

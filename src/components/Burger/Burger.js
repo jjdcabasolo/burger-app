@@ -6,25 +6,6 @@ import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = (props) => {
-  // let transformedIngredients = // array of burgerIngredient components
-  //   Object
-  //     .keys(props.ingredients)
-  //     .map((ingredientKey) => { // mapping each keys of the given prop
-  //       return [...Array(props.ingredients[ingredientKey])]  // create an array with size of number of ingredients
-  //         .map((_, index) => { // for every ingredient and ingredient count, make a burgerIngredient component
-  //           return ( 
-  //             <BurgerIngredient
-  //               key={ingredientKey + index}
-  //               type={ingredientKey}
-  //             />
-  //           );
-  //         });
-  //     })
-  //     .reduce((array, element) => { // transform array into something else
-  //       return array.concat(element); // reduced value; added to initial value
-  //     }, [] // initial value
-  //   ); // array flattening
-
   let transformedIngredients = [];
   for (const ingredient in props.ingredients) {
     transformedIngredients.push(<BurgerIngredient key={ingredient} type={props.ingredients[ingredient]} />);
@@ -56,7 +37,7 @@ const burger = (props) => {
         </div>
       </Segment>
 
-      <div className='boundary-toolbar-page-content' />
+      <div className='boundary-burger-preview' />
     </div>
   );
 };

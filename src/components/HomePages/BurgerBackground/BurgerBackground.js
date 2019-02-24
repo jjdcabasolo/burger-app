@@ -8,12 +8,11 @@ import Aux from '../../../hoc/Auxilliary';
 const burgerBackground = (props) => {
   const contents = [
     {    
-      title: '2-title',
+      key: '2-title',
       content: (
         <Fade top>
           <Divider
             as='h2'
-            // inverted={this.props.isNight}
             className='header primary-font'
             content='The Burger'
             horizontal
@@ -27,12 +26,11 @@ const burgerBackground = (props) => {
       ),
     },
     {
-      title: '2-content',
+      key: '2-content',
       content: (
-        <Fade bottom>
+        <Fade bottom delay={500}>
           <Header
-            // inverted={this.props.isNight}
-            content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero, quis iaculis velit. In in massa ante. Sed consectetur mollis lorem, sed bibendum erat volutpat non. Aenean enim purus, ornare vel porta vel, malesuada vitae massa. Integer volutpat porta enim quis maximus. Phasellus dignissim id dolor eget hendrerit. Cras placerat magna convallis imperdiet tristique. Nullam id rutrum justo. Phasellus bibendum a dolor at posuere. Vivamus ante sem, mattis a lorem nec, rhoncus maximus tortor. Pellentesque nisi velit, pellentesque non sapien nec, varius feugiat enim.'
+            content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero.'
             style={{
               fontSize: '1.5em',
               fontWeight: 'normal',
@@ -46,8 +44,13 @@ const burgerBackground = (props) => {
 
   return (
     <Aux>
-      { contents.map((element) => {
-          return element.content;
+      {
+        contents.map((element) => {
+          return (
+            <Aux key={element.key}>
+              {element.content}
+            </Aux>
+          );
         })
       }
     </Aux>

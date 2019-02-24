@@ -7,35 +7,28 @@ import Aux from './../../hoc/Auxilliary';
 import Introduction from './Introduction/Introduction';
 import BurgerBackground from './BurgerBackground/BurgerBackground';
 import IngredientComponent from './IngredientComponent/IngredientComponent';
-import TheBun from './TheBun/TheBun';
+import BunComponent from './BunComponent/BunComponent';
 import Footer from './Footer/Footer';
 
 const homePages = (props) => {
   const pages = [
     (<Introduction activeItem={props.activeItem} itemClick={props.itemClick}/>),
     (<BurgerBackground />),
-    (<TheBun />),
+    (<BunComponent />),
     (<IngredientComponent />),
     (<Footer />),
   ];
-  
+
   return (
     <Aux>
       { pages.map((element, index) => {
         return (
-          <div className='section'>
-            <Visibility
-              updateOn='repaint'
-              continuous
-              onOnScreen={() => props.animateOn(index + 1)}
-              onOffScreen={() => props.animateOff(index + 1)}
-            >
-              <Segment textAlign='center' vertical>
-                <Container text>                
-                  {element}
-                </Container>
-              </Segment>
-            </Visibility>
+          <div className='section' key={index}>
+            <Segment textAlign='center' vertical>
+              <Container text>                
+                {element}
+              </Container>
+            </Segment>
           </div>
         )})
       }

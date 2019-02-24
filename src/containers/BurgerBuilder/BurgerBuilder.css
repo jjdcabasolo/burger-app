@@ -1,6 +1,6 @@
 #bugerbuilder-container {
   /* width: 1300px !important; */
-  margin-top: 15em;
+  margin-top: 15vh;
 }
 
 #burgerbuilder-left-menu {
@@ -60,4 +60,8 @@
 .burgerbuilder-right-step-opacity {
   opacity: 0.3;
   pointer-events: none;
+}
+
+.boundary-burger-preview {
+  margin-bottom: 18px;
 }

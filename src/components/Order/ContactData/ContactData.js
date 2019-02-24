@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Grid, TextArea } from 'semantic-ui-react';
 
+import { Fade } from 'react-reveal';
+
 import Aux from './../../../hoc/Auxilliary';
 import './ContactData.css'
 
@@ -84,8 +86,10 @@ const contactData = (props) => {
         </Grid>
       </Form>
 
-      {hasError ?
-        <p className='secondary-font font-normal contactdata-form-message'>fields in red must be filled up to continue</p>
+      { hasError ?
+        <Fade>
+          <p className='secondary-font font-normal contactdata-form-message'>fields in red must be filled up to continue</p>
+        </Fade>
         :
         null
       }

@@ -8,7 +8,7 @@
 
 .burger-preview-container {
   overflow-y: auto;
-  max-height: 550px;
+  max-height: 55vh;
 }
 
 @media (max-width: 768px) {
