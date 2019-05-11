@@ -1,0 +1,20 @@
+.receipt-divider-space {
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+
+.receipt-total {
+  font-size: 3em;
+}
+
+.receipt-value {
+  font-size: 1.5em;
+}
+
+.receipt-icon {
+  padding-top: 6px !important;
+}
+
+.receipt-place-order {
+  width: 176px;
+}

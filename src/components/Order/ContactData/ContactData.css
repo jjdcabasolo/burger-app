@@ -1,0 +1,16 @@
+.contact-data-ribbon {
+  margin-bottom: 10px !important;
+  width: 15em;
+  text-align: end;
+  margin-left: -2.4em !important;
+  background-color: #373737 !important;
+  color: white !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+}
+
+.contactdata-form-message {
+  margin-top: 1.5em;
+  text-align: end;
+  color: #9f3a38;
+}

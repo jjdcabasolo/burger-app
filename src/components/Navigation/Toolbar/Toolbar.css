@@ -1,0 +1,87 @@
+/* ui overhaul */
+.ui.menu {
+  border: none;
+  box-shadow: none;
+  font-family: 'Rubik', sans-serif !important;
+}
+
+#toolbar-current-page {
+  padding: 10px !important;
+  height: 2em;
+  margin-left: -1px;
+  font-size: 1.25em;
+  background-color: #ffcf44;
+  font-weight: 600;
+}
+
+#toolbar-scroll {
+  padding: 10px !important;
+  height: 2em;
+  margin-left: -1px;
+  font-size: 1.25em;
+  background-color: #cccccc;
+  font-weight: 500;
+}
+
+#toolbar-current-page:hover {
+  background-color: #616161;
+  color: white;
+}
+
+.ui.menu .item:before {
+  content: none;
+}
+
+#toolbar-button-icon {
+  height: 38px;
+  width: 38px;
+  padding: 0;
+  position: absolute;
+  color: black;
+  background-color: #cccccc;
+  border: 3px #373737 solid;
+  margin-top: 0px;
+  margin-left: -22px;
+  border-radius: 0% !important;
+  box-shadow: none;  
+}
+
+.toolbar-night-mode:hover,
+.toolbar-sidebar:hover {
+  background-color: #373737 !important;
+  color: white !important;
+}
+
+#toolbar-remove-hover:hover {
+  background-color: transparent;
+}
+
+.ui.menu .item>i.icon {
+  margin: 0;
+}
+
+#toolbar-navbar {
+  background-color: transparent;
+  padding: 5vh 5vh 5vh 7vh;
+}
+
+.ui.left.visible.sidebar {
+  box-shadow: none;
+}
+
+#toolbar-container-adjust {
+  transform: translate(-30em, 0px);
+}
+
+.toolbar-container {
+  transition: transform 0.5s;
+}
+
+#toolbar-sidebar-adjust {
+  width: 38px;
+  height: 38px;
+}
+
+.toolbar-sidebar {
+  background-color: #373737;
+}

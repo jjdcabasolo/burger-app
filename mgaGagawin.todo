@@ -1,0 +1,16 @@
+
+todo
+
+[ ] refactor home.js /howm dat zhe-ehz/  
+[ ] split components into several parts; structure below
+  - components
+    - HomePages           div section, segment, and container
+      - Introduction      1
+      - TheBurger         2
+      - TheIngredients    3
+      - Footer            4
+  - container
+    - Home                react fullpage wrapper, iterate array of size # of HomePages
+[ ] transfer global settings into redux
+  [ ] night mode
+  [ ] active page

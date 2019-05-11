@@ -1,0 +1,60 @@
+.orders-view {
+  margin-top: 27px;
+  height: 83.5vh;
+}
+
+.orders-view-list {
+  margin-top: 14px !important;
+}
+
+@media (max-width: 768px) {
+  .orders-view-container {
+    margin-top: 27px !important;
+  }
+
+  .orders-view {
+    height: 89vh;
+  }
+}
+
+.masonry.grid {
+  display: table-cell;
+}
+
+@media only screen and (min-width: 768px) {
+  .masonry.grid {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 0;
+       -moz-column-gap: 0;
+            column-gap: 0;
+  }
+  
+  .ui.doubling.masonry.grid[class*="four column"] > .column {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .masonry.grid {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
+}
+
+/* card animation on page load */
+ 
+@keyframes loadCards {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.order-load-cards {
+  animation: loadCards 1s ease-in-out; 
+}

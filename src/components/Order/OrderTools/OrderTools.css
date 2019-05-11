@@ -1,0 +1,9 @@
+#order-tools-mobile {
+  position: fixed !important;
+  margin: 14px 0px 0px !important;
+  top: 49px;
+  right: 23px;
+  z-index: 9999;
+  transform: translate(0px);
+  transition: 0.1s ease-in;
+}

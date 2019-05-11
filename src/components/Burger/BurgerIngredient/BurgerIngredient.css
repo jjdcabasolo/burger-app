@@ -1,0 +1,353 @@
+.BreadBottom {
+  height: 50px;
+  width: 80%;
+  background: #F08E4A;
+  border-radius: 7px 7px 30px 30px;
+  box-shadow: inset -3px -3px #cc8452;
+  margin: 0 auto 2% auto;
+}
+
+.BreadTop {
+  height: 75px;
+  width: 80%;
+  background: #F08E4A;
+  border-radius: 130px 130px 10px 10px;
+  box-shadow: inset -4px -4px #cc8452;
+  margin: 2% auto 0 auto;
+  position: relative;
+}
+
+.Seeds1 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 30%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(-20deg);
+  /* box-shadow: inset -2px -3px #c9c9c9; */
+}
+
+.Seeds1:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: -170%;
+  top: -260%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px 2px #c9c9c9; */
+}
+
+.Seeds1:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 180%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px -3px #c9c9c9; */
+}
+
+.Seeds2 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 64%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(10deg);
+  /* box-shadow: inset -3px 0 #c9c9c9; */
+}
+
+.Seeds2:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 150%;
+  top: -130%;
+  border-radius: 40%;
+  transform: rotate(90deg);
+  /* box-shadow: inset 1px 3px #c9c9c9; */
+}
+
+.Seeds3 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 76%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(-20deg);
+  /* box-shadow: inset -2px -3px #c9c9c9; */
+}
+
+.Seeds3:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: -170%;
+  top: -260%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px 2px #c9c9c9; */
+}
+
+.Seeds3:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 180%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px -3px #c9c9c9; */
+}
+
+.Seeds4 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 37%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(10deg);
+  /* box-shadow: inset -3px 0 #c9c9c9; */
+}
+
+.Seeds4:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 150%;
+  top: -130%;
+  border-radius: 40%;
+  transform: rotate(90deg);
+  /* box-shadow: inset 1px 3px #c9c9c9; */
+}
+
+.Seeds5 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 53%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(-20deg);
+  /* box-shadow: inset -2px -3px #c9c9c9; */
+}
+
+.Seeds5:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: -170%;
+  top: -250%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px 2px #c9c9c9; */
+}
+
+.Seeds5:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 150%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(60deg);
+  /* box-shadow: inset -1px -3px #c9c9c9; */
+}
+
+.Seeds6 {
+  width: 1%;
+  height: 15%;
+  position: absolute;
+  background-color: white;
+  left: 16%;
+  top: 50%;
+  border-radius: 40%;
+  transform: rotate(10deg);
+  /* box-shadow: inset -3px 0 #c9c9c9; */
+}
+
+.Seeds6:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  left: 101%;
+  top: -130%;
+  border-radius: 40%;
+  transform: rotate(90deg);
+  /* box-shadow: inset 1px 3px #c9c9c9; */
+}
+
+.Meat {
+  width: 80%;
+  height: 30px;
+  background: #a5673f;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: inset -4px -4px #8e5733;
+}
+
+.Cheese {
+  width: 90%;
+  height: 15px;
+  margin: 0% auto;
+  background: #fbbd08;
+  border-radius: 34px;
+  box-shadow: inset -3px -3px #eab20f;
+}
+
+.CheeseDrip1 {
+  width: 15px;
+  height: 14px;
+  margin: 0% auto;
+  background: #fbbd08;
+  transform: rotate(45deg);
+  border-radius: 0 34px 34px 34px;
+  box-shadow: inset -3px -3px #eab20f;
+  transform: translate(67px, 10px);
+}
+
+.CheeseDrip2 {
+  width: 15px;
+  height: 10px;
+  margin: 0% auto;
+  background: #fbbd08;
+  transform: rotate(45deg);
+  border-radius: 0 34px 34px 34px;
+  box-shadow: inset -3px -3px #eab20f;
+  transform: translate(52px, -4px);
+}
+
+.CheeseDrip3 {
+  width: 15px;
+  height: 11px;
+  margin: 0% auto;
+  background: #fbbd08;
+  transform: rotate(45deg);
+  border-radius: 0 34px 34px 34px;
+  box-shadow: inset -3px -3px #eab20f;
+  transform: translate(-111px, -13px);
+}
+
+.CheeseDrip4 {
+  width: 15px;
+  height: 12px;
+  margin: 0% auto;
+  background: #fbbd08;
+  transform: rotate(45deg);
+  border-radius: 0 34px 34px 34px;
+  box-shadow: inset -3px -3px #eab20f;
+  transform: translate(-170px, -23px);
+}
+
+.Salad {
+  width: 83%;
+  height: 12px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 5px;
+  box-shadow: inset -3px -3px #2c9c47;
+}
+
+.SaladLeaf1 {
+  width: 5%;
+  height: 9px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(130px, 9px);
+}
+
+.SaladLeaf2 {
+  width: 18%;
+  height: 11px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(80px, 0px);
+}
+
+.SaladLeaf3 {
+  width: 13%;
+  height: 11px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(13px, -12px);
+}
+
+.SaladLeaf4 {
+  width: 5%;
+  height: 9px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(-26px, -22px);
+}
+
+.SaladLeaf5 {
+  width: 20%;
+  height: 9px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(-82px, -31px);
+}
+
+.SaladLeaf6 {
+  width: 5%;
+  height: 9px;
+  margin: 0 auto;
+  background: #21ba45;
+  border-radius: 0 0 59px 59px;
+  transform: rotate(45deg);
+  box-shadow: inset -3px -3px #2c9c47;
+  transform: translate(-136px, -41px);
+}
+
+.Tomato {
+  width: 70%;
+  height: 10px;
+  background: #db2828;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: inset -3px -3px #c72121;
+}

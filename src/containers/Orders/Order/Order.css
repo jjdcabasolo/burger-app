@@ -1,0 +1,20 @@
+.order-remove {
+  position: absolute;
+  right: 7px;
+}
+
+.order-main-content {
+  height: 155px;
+}
+
+@media (max-width: 1201px) {
+  .order-main-content {
+    height: 190px;
+  }
+}
+
+@media (max-width: 992px) {
+  .order-main-content {
+    height: 120px;
+  }
+}

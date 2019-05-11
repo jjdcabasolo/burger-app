@@ -1,14 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500|Rubik:500');
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Rubik', sans-serif !important;
+  background-color: #fafafa !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.boundary-toolbar-page-content {
+  margin-top: 28px;
+}
+
+/* semantic-ui overrides */
+.ui.buttons .or:before {
+  border: 1px solid #d4d4d5 !important;
+}
+
+.ui.top.attached.header {
+  margin-top: 0;
+}
+
+.ui.cards {
+  margin: 0 !important;
+}
+
+div.four.wide.computer.eight.wide.tablet.column.fade.down.hidden.transition {
+  visibility: visible !important;
+}
+
+.table tr.visible.transition {
+  display: table-row !important;
+}
+
+tr.fade.right.hidden.transition {
+  display: table-row !important;
+  visibility: visible !important;
+}
+
+/* ui overhaul */
+/* font-related stuff */
+.primary-font {
+  font-family: 'Rubik', sans-serif !important;
+}
+
+.secondary-font {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.font-normal {
+  font-size: 1.15em !important;
+}
+
+.font-medium {
+  font-size: 1.25em !important;
+}
+
+.font-small {
+  font-size: 0.85em !important;
+}
+
+/*  */
+.ui.vertical.menu {
+  box-shadow: none !important;
+  border-radius: none !important;
+}
+
+.ui.vertical.menu>.item:first-child {
+  border-radius: 0 !important;
+}
+
+.ui.vertical.menu>.item:last-child {
+  border-radius: 0 !important;
+}
+
+.ui.vertical.menu .item:before {
+  content: none !important;
+}
+
+.ui.icon.menu .item {
+  height: 70px !important;
+  width: 70px !important;
+}
+
+/* builder */
+.ui.top.attached.header {
+  padding: 10px !important;
+  border-radius: 0 !important;
+  font-size: 1.25em;
+  background-color: #cccccc !important;
+  color: #373737;
+  font-family: 'Rubik', sans-serif !important;
+  font-weight: 600 !important;
+  border: 3px #373737 solid;
+  text-align: end;
+}
+
+.ui.attached.segment {
+  border-color: #373737 !important;
+  border-width: 3px 3px 3px 3px !important;
+}
+
+.ui[class*="bottom attached"].buttons .button:first-child,
+.ui[class*="bottom attached"].buttons .button:nth-child(2),
+.ui[class*="bottom attached"].buttons .button:last-child {
+  border-radius: 0 !important;
+  border-bottom-width: 3px !important;
+  border-top-width: 0px !important;
+  border-right-width: 3px !important;
+  border-color: #373737;
+  border-style: solid;
+}
+
+.ui[class*="bottom attached"].buttons .button:first-child {
+  border-left-width: 3px !important;
+}
+
+.ui[class*="bottom attached"].buttons .button:nth-child(2) {
+  border-left-width: 0px !important;
+}
+
+.ui[class*="bottom attached"].buttons .button:last-child {
+  border-left-width: 0px !important;
+  background-color: #ffcf44;
+  color: black;
+}
+
+.ui[class*="bottom attached"].buttons .button:first-child:hover,
+.ui[class*="bottom attached"].buttons .button:nth-child(2):hover,
+.ui[class*="bottom attached"].buttons .button:last-child:hover {
+  color: #373737;
+  background-color: white;
+  border-bottom-width: 3px !important;
+  border-top-width: 0px !important;
+  border-right-width: 3px !important;
+}
+
+.ui[class*="bottom attached"].buttons .button:first-child:hover {
+  border-left-width: 3px !important;
+}
+
+.ui.attached.buttons {
+  margin-top: 0 !important;
+}
+
+.ui.attached.buttons .button {
+  padding: 10px !important;
+  background-color: #373737;
+  color: white;
+  font-family: 'Roboto Mono';
+  font-weight: 500;
+  font-size: 17px;
+}
+
+td .ui.icon.button {
+  margin-right: 4px !important;
+  border-radius: .28571429rem .28571429rem .28571429rem .28571429rem !important;
+  border-bottom-width: 3px !important;
+  border-top-width: 0px !important;
+  border-left-width: 0px !important;
+  border-right-width: 3px !important;
+  border-color: #373737;
+  border-style: solid;  
+}
+
+.ui.buttons .button:last-child {
+  background-color: #ffcf44;  
+}
+
+.ui.divider:not(.vertical):not(.horizontal) {
+  border-top: 3px solid rgba(34,36,38,.15) !important;
+}
+
+.ui.segment {
+  padding: 2em 2em !important;
+}
+
+.ui.basic.table th {
+  border-bottom: none !important;
+}
+
+.ui.table tr td  {
+  border-top: none !important;
+}
+
+.ui.table thead th {
+  border-bottom: 3px solid rgba(34,36,38,.1) !important;
+}
+
+.ui.table {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+#home-builder.ui.basic.button {
+  border: 3px #373737 solid;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: #373737 !important;
+}
+
+.ui.attached.message {
+  border-radius: 0 !important;
+  box-shadow: 0 0 0 3px rgba(34,36,38,.15) inset !important;
+}
+
+.ui.form input[type=text],
+.ui.form input[type=email],
+.ui.form textarea {
+  transition: all 0.5s !important;
+  border-color: #373737 !important;
+  border-style: solid !important;
+  border-width: 0px 0px 0px 3px !important;
+  border-radius: 0px !important;
+  font-family: 'Roboto Mono' !important;
+}
+
+.ui.form .field.error input[type=text],
+.ui.form .field.error input[type=email],
+.ui.form .field.error textarea {
+  background-color: transparent !important;
+  border-left-color: #9f3a38 !important;
+}
+
+/* label */
+.ui.image.label .detail {
+  margin: -0.75em -0.75em -0.75em 0.5em !important;
+  padding: 0.75em !important;
+  border-radius: 0 !important;
+  background: rgba(256,256,256,0.1) !important;
+  color: white !important;
+} 
+
+.ui.image.label {
+  border-radius: 0 !important;
+  padding: 0.75em !important;
+  background-color: #373737 !important;
+  border: 3px #373737 solid;
+  color: white !important;
+}
+
+#receipt.ui.list>.item>.content {
+  line-height: 1.75em;
 }
