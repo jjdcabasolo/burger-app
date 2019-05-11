@@ -11,6 +11,10 @@
   font-size: 1.5em;
 }
 
-.receipt-builder-btn {
-  
+.receipt-icon {
+  padding-top: 6px !important;
+}
+
+.receipt-place-order {
+  width: 176px;
 }

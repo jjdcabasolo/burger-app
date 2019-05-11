@@ -5,7 +5,24 @@ import { Button, Divider, Header, List, Segment, Grid } from 'semantic-ui-react'
 import Aux from '../../../hoc/Auxilliary';
 import './Receipt.css';
 
+const formatInput = (inputMap) => {
+  return [
+    {
+      entry: inputMap[4].value,
+      value: inputMap[0].value + " " + inputMap[1].value,
+      icon: "user",
+    },
+    {
+      entry: inputMap[2].value,
+      value: inputMap[3].value,
+      icon: "address card outline",
+    },
+  ];
+}
+
 const receipt = (props) => {
+  const data = formatInput(props.inputMap);
+
   return (
     <Aux>
       <Header
@@ -30,10 +47,11 @@ const receipt = (props) => {
               <p className='font-normal'>cost</p>
             </Grid.Column>
             <Grid.Column width={11}>
-              {props.inputMap.map((element) => {
+              {data.map((element) => {
                 return (
                   <List id='receipt' inverted={props.isNight}>
                     <List.Item>
+                      <List.Icon name={element.icon} className='receipt-icon' />
                       <List.Content>
                         <List.Header className='secondary-font receipt-value'>
                           {element.value}
@@ -72,6 +90,7 @@ const receipt = (props) => {
           content='Place order'
           icon='checkmark'
           onClick={() => console.log('asdfasdfasdf')}
+          className='receipt-place-order'
         />
       </Button.Group>
 

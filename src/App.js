@@ -69,11 +69,18 @@ class App extends Component {
             } />
 
             <Route path='/orders' render={(props) =>
-              <Orders
-                {...props}
+              // <Orders
+              //   {...props}
+              //   isNight={this.state.isNightMode}
+              //   nightStyle={nightStyle}
+              //   itemClick={this.itemClickHandler}
+              // />
+              <NotFound
                 isNight={this.state.isNightMode}
                 nightStyle={nightStyle}
-                itemClick={this.itemClickHandler}
+                iconName='help'
+                mainMessage='Wala pa. Teka lang. Huhu.'
+                subMessage={'Matatapos din \'tong page na to. Konting tulog na lang.'}
               />
             } />
 
