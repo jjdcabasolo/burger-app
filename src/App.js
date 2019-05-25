@@ -57,7 +57,7 @@ class App extends Component {
           toggleNight={this.nightModeHandler}
         >
           <Switch>
-            <Route path='/builder' render={(props) =>
+            <Route path='/burger-app/builder' render={(props) =>
               <BurgerBuilder
                 {...props}
                 isNight={this.state.isNightMode}
@@ -68,7 +68,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/orders' render={(props) =>
+            <Route path='/burger-app/orders' render={(props) =>
               // <Orders
               //   {...props}
               //   isNight={this.state.isNightMode}
@@ -84,7 +84,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/help' render={(props) =>
+            <Route path='/burger-app/help' render={(props) =>
               <NotFound
                 isNight={this.state.isNightMode}
                 nightStyle={nightStyle}
@@ -94,7 +94,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/' exact render={(props) =>
+            <Route path='/burger-app' exact render={(props) =>
               <Home
                 {...props}
                 isNight={this.state.isNightMode}
