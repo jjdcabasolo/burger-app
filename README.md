@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Burger app
 
-## Available Scripts
+This app was based on Maximilian Schwarzmüller's (https://www.udemy.com/user/maximilian-schwarzmuller/) React basic course entitled "**React - The Complete Guide (incl Hooks, React Router, Redux)**" (https://www.udemy.com/react-the-complete-guide-incl-redux/) at udemy.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Web framework
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This is my very first **React** app (v.16.5.0) that implements:
 
-### `npm test`
+- stateful, stateless, and pure components
+- HOC's
+- lifecycle methods
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### State management
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**Redux** (v.4.0.0) was used to handle state management. It uses `connect()` HOC for declaring states and actions to a component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Styling
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**CSS Stylesheet** was used, since this was a beginner app. Each file/component has its own CSS file and the naming convention is on this format
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`.<componentName>-<purpose>`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+It is on `kebab-case`, starting with the component name followed by a short description on where/how it was used.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### UI Framework
 
-### Code Splitting
+**Semantic UI's React integration** was used (v.0.82.5) which was heavily customized for aesthetic purposes.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### Other dependencies
 
-### Making a Progressive Web App
+List of other packages/modules used for this application:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- **react-fullpage**: for the PowerPoint-like presentation for home/landing page
+- **react-reveal**: for the animations throughout the app
+- **gh-pages**: for app deployment on GitHub pages
