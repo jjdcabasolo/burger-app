@@ -1,22 +1,18 @@
 {
-  "main.css": "static/css/main.edcf3afc.css",
-  "main.css.map": "static/css/main.edcf3afc.css.map",
-  "main.js": "static/js/main.0c214aeb.js",
-  "main.js.map": "static/js/main.0c214aeb.js.map",
-  "static\\media\\brand-icons.eot": "static/media/brand-icons.13db00b7.eot",
-  "static\\media\\brand-icons.svg": "static/media/brand-icons.a1a749e8.svg",
-  "static\\media\\brand-icons.ttf": "static/media/brand-icons.c5ebe0b3.ttf",
-  "static\\media\\brand-icons.woff": "static/media/brand-icons.a046592b.woff",
-  "static\\media\\brand-icons.woff2": "static/media/brand-icons.e8c322de.woff2",
-  "static\\media\\flags.png": "static/media/flags.9c74e172.png",
-  "static\\media\\icons.eot": "static/media/icons.8e3c7f55.eot",
-  "static\\media\\icons.svg": "static/media/icons.962a1bf3.svg",
-  "static\\media\\icons.ttf": "static/media/icons.b87b9ba5.ttf",
-  "static\\media\\icons.woff": "static/media/icons.faff9214.woff",
-  "static\\media\\icons.woff2": "static/media/icons.0ab54153.woff2",
-  "static\\media\\outline-icons.eot": "static/media/outline-icons.701ae6ab.eot",
-  "static\\media\\outline-icons.svg": "static/media/outline-icons.82f60bd0.svg",
-  "static\\media\\outline-icons.ttf": "static/media/outline-icons.ad97afd3.ttf",
-  "static\\media\\outline-icons.woff": "static/media/outline-icons.ef60a4f6.woff",
-  "static\\media\\outline-icons.woff2": "static/media/outline-icons.cd6c777f.woff2"
+  "files": {
+    "main.css": "/burger-app/static/css/main.5650b601.chunk.css",
+    "main.js": "/burger-app/static/js/main.6bb9f915.chunk.js",
+    "main.js.map": "/burger-app/static/js/main.6bb9f915.chunk.js.map",
+    "runtime~main.js": "/burger-app/static/js/runtime~main.20ac298b.js",
+    "runtime~main.js.map": "/burger-app/static/js/runtime~main.20ac298b.js.map",
+    "static/css/2.9e253ace.chunk.css": "/burger-app/static/css/2.9e253ace.chunk.css",
+    "static/js/2.eeee3b5f.chunk.js": "/burger-app/static/js/2.eeee3b5f.chunk.js",
+    "static/js/2.eeee3b5f.chunk.js.map": "/burger-app/static/js/2.eeee3b5f.chunk.js.map",
+    "index.html": "/burger-app/index.html",
+    "precache-manifest.9c8eefdfb90fc7414b963e6773dd7e6b.js": "/burger-app/precache-manifest.9c8eefdfb90fc7414b963e6773dd7e6b.js",
+    "service-worker.js": "/burger-app/service-worker.js",
+    "static/css/2.9e253ace.chunk.css.map": "/burger-app/static/css/2.9e253ace.chunk.css.map",
+    "static/css/main.5650b601.chunk.css.map": "/burger-app/static/css/main.5650b601.chunk.css.map",
+    "static/media/semantic.min.css": "/burger-app/static/media/outline-icons.ef60a4f6.woff"
+  }
 }
