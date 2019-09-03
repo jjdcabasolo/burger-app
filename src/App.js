@@ -33,7 +33,7 @@ const nightStyle = [
 
 class App extends Component {
   state = {
-    activeItem: window.location.href.replace('http://localhost:3000/', ''),
+    activeItem: window.location.pathname.replace('/burger-app/', ''),
     openSidebar: false,
     isNightMode: false,
     showScroll: true,

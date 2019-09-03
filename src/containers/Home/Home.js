@@ -28,10 +28,11 @@ class Home extends PureComponent {
     return (
       <div >
         <ReactFullpage
+          sectionsColor= {[]}
           render={({ _, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
-                <HomePages 
+                <HomePages
                   fullpageApi={fullpageApi}
                   animateOn={this.animateOn}
                   animateOff={this.animateOff}
