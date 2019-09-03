@@ -5,7 +5,7 @@ import './Toolbar.css';
 import { Slide } from 'react-reveal';
 
 const toolbar = (props) => {
-  const isHome = props.activeItem === 'home' || props.activeItem === '';
+  const isHome = props.activeItem === 'home' || props.activeItem === '' || props.activeItem === '/burger-app';
 
   let currentPage;
   if (isHome) {
@@ -74,4 +74,4 @@ const toolbar = (props) => {
   );
 }
 
-export default toolbar; 
+export default toolbar;
