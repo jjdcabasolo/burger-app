@@ -1,6 +1,10 @@
 # Burger app
 
-This app was based on Maximilian Schwarzmüller's (https://www.udemy.com/user/maximilian-schwarzmuller/) React basic course entitled "**React - The Complete Guide (incl Hooks, React Router, Redux)**" (https://www.udemy.com/react-the-complete-guide-incl-redux/) at udemy.
+This app was based on [Maximilian Schwarzmüller's](https://www.udemy.com/user/maximilian-schwarzmuller/) React basic course entitled ["**React - The Complete Guide (incl Hooks, React Router, Redux)**"](https://www.udemy.com/react-the-complete-guide-incl-redux/) at udemy.
+
+
+
+#### Live demo: https://jjdcabasolo.github.io/burger-app/
 
 
 
@@ -43,3 +47,4 @@ List of other packages/modules used for this application:
 - **react-fullpage**: for the PowerPoint-like presentation for home/landing page
 - **react-reveal**: for the animations throughout the app
 - **gh-pages**: for app deployment on GitHub pages
+
