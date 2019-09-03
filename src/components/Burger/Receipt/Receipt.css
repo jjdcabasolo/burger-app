@@ -18,3 +18,7 @@
 .receipt-place-order {
   width: 176px;
 }
+
+#receipt.ui.list>.item>.content {
+  line-height: 1.75em;
+}
