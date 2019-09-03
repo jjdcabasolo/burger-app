@@ -115,16 +115,16 @@ class Receipt extends Component {
           onClose={this.handleClose}
           closeIcon
         >
-          <Header icon='warning' content='Finishing order' />
+          <Header icon='warning' content='Finishing order' className='primary-font font-large' />
           <Modal.Content>
-            <p>
+            <p className='primary-font font-normal'>
               Are you really sure you want to place this order?
             </p>
           </Modal.Content>
           <Modal.Actions>
             <Button
               basic
-              color='red'
+              id='btn-secondary'
               content='No'
               icon='remove'
               inverted
@@ -132,7 +132,8 @@ class Receipt extends Component {
             />
 
             <Button
-              color='green'
+              basic
+              id='btn-primary'
               content='Yes'
               icon='checkmark'
               inverted

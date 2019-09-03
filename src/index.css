@@ -71,7 +71,11 @@ tr.fade.right.hidden.transition {
   font-size: 0.85em !important;
 }
 
-/*  */
+.font-large {
+  font-size: 2em !important;
+}
+
+/* [sidebar] menu */
 .ui.vertical.menu {
   box-shadow: none !important;
   border-radius: none !important;
@@ -94,7 +98,7 @@ tr.fade.right.hidden.transition {
   width: 70px !important;
 }
 
-/* builder */
+/* [builder] segments */
 .ui.top.attached.header {
   padding: 10px !important;
   border-radius: 0 !important;
@@ -172,11 +176,11 @@ td .ui.icon.button {
   border-left-width: 0px !important;
   border-right-width: 3px !important;
   border-color: #373737;
-  border-style: solid;  
+  border-style: solid;
 }
 
 .ui.buttons .button:last-child {
-  background-color: #ffcf44;  
+  background-color: #ffcf44;
 }
 
 .ui.divider:not(.vertical):not(.horizontal) {
@@ -234,6 +238,28 @@ td .ui.icon.button {
   border-left-color: #9f3a38 !important;
 }
 
+.ui.basic.inverted.button {
+  border-radius: 0 !important;
+  border-bottom-width: 3px !important;
+  border-top-width: 0px !important;
+  border-right-width: 3px !important;
+  border-color: #373737;
+  border-style: solid;
+  border-left-width: 0px !important;
+  color: black;
+  font-family: 'Roboto Mono';
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.ui.basic.inverted.button#btn-primary {
+  background-color: #ffcf44 !important;
+}
+
+.ui.basic.inverted.button#btn-secondary {
+  background-color: #373737 !important;
+}
+
 /* label */
 .ui.image.label .detail {
   margin: -0.75em -0.75em -0.75em 0.5em !important;
@@ -241,7 +267,7 @@ td .ui.icon.button {
   border-radius: 0 !important;
   background: rgba(256,256,256,0.1) !important;
   color: white !important;
-} 
+}
 
 .ui.image.label {
   border-radius: 0 !important;
@@ -249,8 +275,4 @@ td .ui.icon.button {
   background-color: #373737 !important;
   border: 3px #373737 solid;
   color: white !important;
-}
-
-#receipt.ui.list>.item>.content {
-  line-height: 1.75em;
 }
