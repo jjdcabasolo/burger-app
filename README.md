@@ -10,7 +10,7 @@ This app was based on [Maximilian Schwarzmüller's](https://www.udemy.com/user/m
 
 ## Web framework
 
-This is my very first **React** app (v.16.5.0) that implements:
+This is my very first **React** (v.16.5.0) app that implements:
 
 - stateful, stateless, and pure components
 - HOC's
@@ -26,7 +26,7 @@ This is my very first **React** app (v.16.5.0) that implements:
 
 ## Styling
 
-**CSS Stylesheet** was used, since this was a beginner app. Each file/component has its own CSS file and the naming convention is on this format
+**CSS Stylesheet** was used for styling, where each file/component has its own CSS file and the naming convention is on this format
 
 `.<componentName>-<purpose>`
 

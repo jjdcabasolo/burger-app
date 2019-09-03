@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, Header, Modal, Segment } from 'semantic-ui-react';
 
 import ContactData from './../../components/Order/ContactData/ContactData';
@@ -15,6 +16,33 @@ class Checkout extends Component {
     const inputMap = [...this.props.inputMap];
     inputMap[inputMap.findIndex(x => x.name === name)].value = value;
     this.setState({ inputMap: inputMap, hasError: false });
+  }
+
+  checkoutContinuedHandler = () => {
+    let inputMap = [...this.props.inputMap,];
+
+    let isDataComplete = true;
+    for (const item in inputMap) {
+      let conditionEmpty = inputMap[item].value === '';
+
+      if (conditionEmpty) {
+        inputMap[item].error = true;
+        isDataComplete = false;
+      } else {
+        inputMap[item].error = false;
+      }
+    }
+
+    this.setState({ inputMap: inputMap, });
+
+    if (isDataComplete) {
+      this.props.onOrderDetailAdded(this.props.inputMap);
+      this.props.formComplete(true);
+      this.props.changeStep(4);
+    } else {
+      this.setState({ hasError: true });
+      this.props.formComplete(false);
+    }
   }
 
   render() {
@@ -42,10 +70,36 @@ class Checkout extends Component {
           }
         />
 
+        {this.props.stepNumber === 3 ?
+          <Button.Group attached='bottom'>
+            <Button
+              content='Cancel'
+              icon='remove'
+              inverted={this.props.isNight}
+              onClick={() => this.props.changeStep(2)}
+              style={{ marginTop: '-1px' }}
+            />
+            <Button
+              content='Order'
+              icon='shop'
+              inverted={this.props.isNight}
+              onClick={this.checkoutContinuedHandler}
+            />
+          </Button.Group>
+          :
+          null
+        }
+
         <div className='boundary-toolbar-page-content' />
       </Aux>
     );
   }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onOrderDetailAdded: (orderDetails) => dispatch(ordersActions.orderDetailsAdded(orderDetails)),
+  };
 }
 
-export default Checkout;
+export default connect(null, mapDispatchToProps)(Checkout);
