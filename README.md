@@ -4,7 +4,7 @@ This app was based on Maximilian Schwarzmüller's (https://www.udemy.com/user/ma
 
 
 
-### Web framework
+## Web framework
 
 This is my very first **React** app (v.16.5.0) that implements:
 
@@ -14,13 +14,13 @@ This is my very first **React** app (v.16.5.0) that implements:
 
 
 
-### State management
+## State management
 
 **Redux** (v.4.0.0) was used to handle state management. It uses `connect()` HOC for declaring states and actions to a component.
 
 
 
-### Styling
+## Styling
 
 **CSS Stylesheet** was used, since this was a beginner app. Each file/component has its own CSS file and the naming convention is on this format
 
@@ -30,13 +30,13 @@ It is on `kebab-case`, starting with the component name followed by a short desc
 
 
 
-### UI Framework
+## UI Framework
 
 **Semantic UI's React integration** was used (v.0.82.5) which was heavily customized for aesthetic purposes.
 
 
 
-### Other dependencies
+## Other dependencies
 
 List of other packages/modules used for this application:
 
