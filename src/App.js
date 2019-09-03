@@ -69,18 +69,11 @@ class App extends Component {
             } />
 
             <Route path='/burger-app/orders' render={(props) =>
-              // <Orders
-              //   {...props}
-              //   isNight={this.state.isNightMode}
-              //   nightStyle={nightStyle}
-              //   itemClick={this.itemClickHandler}
-              // />
-              <NotFound
+              <Orders
+                {...props}
                 isNight={this.state.isNightMode}
                 nightStyle={nightStyle}
-                iconName='help'
-                mainMessage='Wala pa. Teka lang. Huhu.'
-                subMessage={'Matatapos din \'tong page na to. Konting tulog na lang.'}
+                itemClick={this.itemClickHandler}
               />
             } />
 

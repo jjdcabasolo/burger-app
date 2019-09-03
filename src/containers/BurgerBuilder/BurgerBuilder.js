@@ -15,7 +15,7 @@ import Receipt from '../../components/Burger/Receipt/Receipt';
 import Checkout from '../Checkout/Checkout';
 import Ingredients from './../../components/UI/Ingredients/Ingredients';
 
-import * as burgerBuilderActions from '../../store/actions';
+import * as actions from '../../store/actions';
 
 // mapping of prices
 const INGREDIENT_PRICES = {
@@ -133,11 +133,14 @@ class BurgerBuilder extends Component {
 
                 <div className={this.state.stepNumber === 4 ? null : 'burgerbuilder-right-step-opacity'}>
                   <Receipt
+                    {...this.props}
                     changeStep={this.changeStep}
                     isNight={this.props.isNight}
                     nightStyle={this.props.nightStyle}
                     price={this.props.totalPrice}
                     inputMap={this.props.inputMap}
+                    addOrder={this.props.onOrderAdded}
+                    itemClick={this.props.itemClick}
                     form={this.state.form}
                   />
                 </div>
@@ -161,10 +164,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: (ingredientName) => dispatch(burgerBuilderActions.ingredientAdded(ingredientName)),
-    onIngredientRemoved: (ingredientName) => dispatch(burgerBuilderActions.ingredientRemoved(ingredientName)),
-    onIngredientClear: (ingredientName) => dispatch(burgerBuilderActions.ingredientClear(ingredientName)),
-    onIngredientsClear: () => dispatch(burgerBuilderActions.ingredientsClear()),
+    onIngredientAdded: (ingredientName) => dispatch(actions.ingredientAdded(ingredientName)),
+    onIngredientRemoved: (ingredientName) => dispatch(actions.ingredientRemoved(ingredientName)),
+    onIngredientClear: (ingredientName) => dispatch(actions.ingredientClear(ingredientName)),
+    onIngredientsClear: () => dispatch(actions.ingredientsClear()),
+    onOrderAdded: (orderDetails, burgerIngredients, burgerPrice) => dispatch(actions.orderAdded(orderDetails, burgerIngredients, burgerPrice)),
   };
 }
 

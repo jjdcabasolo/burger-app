@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { Button, Divider, Header, List, Segment, Grid } from 'semantic-ui-react';
+import { Button, Divider, Header, List, Segment, Grid, Modal } from 'semantic-ui-react';
+
+import * as ordersActions from '../../../store/actions/index';
 
 import Aux from '../../../hoc/Auxilliary';
 import './Receipt.css';
@@ -20,83 +23,153 @@ const formatInput = (inputMap) => {
   ];
 }
 
-const receipt = (props) => {
-  const data = formatInput(props.inputMap);
+class Receipt extends Component {
+  state = {
+    hasError: false,
+    isModalOpen: false,
+  }
 
-  return (
-    <Aux>
-      <Header
-        block
-        as='h5'
-        attached='top'
-        content='/ RECEIPT'
-        style={props.isNight ? props.nightStyle[1] : null} />
+  handleOpen = () => this.setState({ isModalOpen: true })
 
-      <Segment
-        attached
-        inverted={props.isNight}
-        style={props.isNight ? props.nightStyle[0] : null} >
+  handleClose = () => this.setState({ isModalOpen: false })
 
-        <p className='secondary-font font-normal'>Almost done! Please double check the information you have provided before finally placing the order.</p>
-        <Divider className='receipt-divider-space' />
+  render () {
+    const data = formatInput(this.props.inputMap);
 
-        {props.form ?
-          <Grid>
-            <Grid.Column width={5} textAlign='right' verticalAlign='middle'>
-              <span className='receipt-total'>{'$ ' + parseFloat(props.price).toFixed(2)}</span>
-              <p className='font-normal'>cost</p>
-            </Grid.Column>
-            <Grid.Column width={11}>
-              {data.map((element) => {
-                return (
-                  <List id='receipt' inverted={props.isNight}>
-                    <List.Item>
-                      <List.Icon name={element.icon} className='receipt-icon' />
-                      <List.Content>
-                        <List.Header className='secondary-font receipt-value'>
-                          {element.value}
-                        </List.Header>
-                        <List.Description className='secondary-font font-normal'>
-                          {element.entry}
-                        </List.Description>
-                      </List.Content>
-                    </List.Item>
-                  </List>
-                );
-              })}
-            </Grid.Column>
-          </Grid>
-          :
-          null
-        }
+    return (
+      <Aux>
+        <Header
+          block
+          as='h5'
+          attached='top'
+          content='/ RECEIPT'
+          style={this.props.isNight ? this.props.nightStyle[1] : null} />
 
-        <Divider className='receipt-divider-space' />
-        <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero. </p>
-      </Segment>
+        <Segment
+          attached
+          inverted={this.props.isNight}
+          style={this.props.isNight ? this.props.nightStyle[0] : null} >
 
-      <Button.Group attached='bottom'>
-        <Button
-          content='Builder'
-          icon='add'
-          onClick={() => props.changeStep(1)}
-          classname='receipt-builder-btn'
-        />
-        <Button
-          content='Delivery'
-          icon='truck'
-          onClick={() => props.changeStep(3)}
-        />
-        <Button
-          content='Place order'
-          icon='checkmark'
-          onClick={() => console.log('asdfasdfasdf')}
-          className='receipt-place-order'
-        />
-      </Button.Group>
+          <p className='secondary-font font-normal'>Almost done! Please double check the information you have provided before finally placing the order.</p>
+          <Divider className='receipt-divider-space' />
 
-      <div className='boundary-toolbar-page-content' />
-    </Aux>
-  );
+          {this.props.form ?
+            <Grid>
+              <Grid.Column width={5} textAlign='right' verticalAlign='middle'>
+                <span className='receipt-total'>{'$ ' + parseFloat(this.props.price).toFixed(2)}</span>
+                <p className='font-normal'>cost</p>
+              </Grid.Column>
+              <Grid.Column width={11}>
+                {data.map((element) => {
+                  return (
+                    <List id='receipt' inverted={this.props.isNight}>
+                      <List.Item>
+                        <List.Icon name={element.icon} className='receipt-icon' />
+                        <List.Content>
+                          <List.Header className='secondary-font receipt-value'>
+                            {element.value}
+                          </List.Header>
+                          <List.Description className='secondary-font font-normal'>
+                            {element.entry}
+                          </List.Description>
+                        </List.Content>
+                      </List.Item>
+                    </List>
+                  );
+                })}
+              </Grid.Column>
+            </Grid>
+            :
+            null
+          }
+
+          <Divider className='receipt-divider-space' />
+          <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero. </p>
+        </Segment>
+
+        <Button.Group attached='bottom'>
+          <Button
+            content='Builder'
+            icon='add'
+            onClick={() => this.props.changeStep(1)}
+            classname='receipt-builder-btn'
+          />
+          <Button
+            content='Delivery'
+            icon='truck'
+            onClick={() => this.props.changeStep(3)}
+          />
+          <Button
+            content='Place order'
+            icon='checkmark'
+            onClick={() => this.handleOpen()}
+            className='receipt-place-order'
+          />
+        </Button.Group>
+
+        <Modal
+          trigger={<div />}
+          basic
+          size='small'
+          open={this.state.isModalOpen}
+          onClose={this.handleClose}
+          closeIcon
+        >
+          <Header icon='warning' content='Finishing order' />
+          <Modal.Content>
+            <p>
+              Are you really sure you want to place this order?
+            </p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button
+              basic
+              color='red'
+              content='No'
+              icon='remove'
+              inverted
+              onClick={() => this.handleClose()}
+            />
+
+            <Button
+              color='green'
+              content='Yes'
+              icon='checkmark'
+              inverted
+              onClick={() => {
+                if (this.props.reOrderDetails) {
+                  this.props.onOrderAdded(this.props.inputMap, this.props.reOrderIngredients, this.props.reOrderPrice);
+                  this.handleClose();
+                  this.props.handleReOrderClose();
+                } else {
+                  this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice);
+                  this.props.itemClick('', { name: 'orders' });
+                  this.props.history.push('/burger-app/orders');
+                }
+              }}
+            />
+          </Modal.Actions>
+        </Modal>
+
+        <div className='boundary-toolbar-page-content' />
+      </Aux>
+    )
+  }
 };
 
-export default receipt;
+const mapStateToProps = state => {
+  return {
+    ingredients: state.build.ingredients,
+    totalPrice: state.build.totalPrice,
+    inputMap: state.order.inputMap,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onOrderDetailAdded: (orderDetails) => dispatch(ordersActions.orderDetailsAdded(orderDetails)),
+    onOrderAdded: (orderDetails, burgerIngredients, burgerPrice) => dispatch(ordersActions.orderAdded(orderDetails, burgerIngredients, burgerPrice)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Receipt);

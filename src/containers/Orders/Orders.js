@@ -189,6 +189,7 @@ class Orders extends Component {
     const isCardView = this.state.activeLayout === 'card';
 
     let orders = this.filterIngredients();
+    console.log(orders);
     const orderStructure = (item, count) => {
       return (
         <Order
@@ -284,17 +285,6 @@ class Orders extends Component {
             }
           </Aux>
         }
-
-        <ReOrder
-          isNight={this.props.isNight}
-          nightStyle={this.props.nightStyle}
-          addOrder={this.props.addOrder}
-          itemClick={this.props.itemClick}
-          addOrderDetails={this.addOrderDetails}
-          item={this.state.item}
-          handleClose={this.handleClose}
-          isModalOpen={this.state.isModalOpen}
-        />
       </Container>
     );
   }

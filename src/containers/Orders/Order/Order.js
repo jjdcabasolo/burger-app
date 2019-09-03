@@ -25,7 +25,6 @@ class Order extends Component {
   render() {
     const date = this.props.item.date.toLocaleString();
     const dateSplit = date.split(', ');
-    // const animationDuration = (this.getRandomInt(100) + 60) * 10;
     const animationDuration = 600;
 
     return (
@@ -38,13 +37,6 @@ class Order extends Component {
           >
             <Grid.Column style={{ marginTop: '28px' }} computer={4} tablet={8}>
               <Card style={this.props.isNight ? this.props.nightStyle[1] : null}>
-                {/* <Card.Content textAlign='center'>
-                  <Card.Header style={this.props.isNight?{color:'white'}:null}>asdf;lkj</Card.Header>
-                  <Card.Meta style={this.props.isNight?{color:'white'}:null}></Card.Meta>
-                  <Card.Description style={this.props.isNight?{color:'white'}:null}>
-                    {this.props.addContactDetails(this.props.item)}
-                  </Card.Description>
-                </Card.Content> */}
                 <Card.Content className='order-main-content'>
                   <Card.Header style={this.props.isNight ? { color: 'white' } : null} className='order-remove'>
                     <Button size='mini' icon='shop' onClick={() => {
