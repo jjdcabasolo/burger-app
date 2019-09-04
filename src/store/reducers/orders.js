@@ -9,7 +9,14 @@ const initialState = {
     { name: 'numbe', value: '', error: false, entry: 'Contact number' },
     { name: 'addre', value: '', error: false, entry: 'Delivery address' },
   ],
-  ordersLocal: [],
+  ordersLocal: [
+    {
+      date: new Date(),
+      details: {name: "John Doe", email: "a", number: "a", address: "undefined"},
+      ingredients: {salad: 1, tomato: 1, cheese: 1, meat: 1},
+      totalPrice: 4.7,
+    },
+  ],
 };
 
 const reducer = (state = initialState, action) => {
