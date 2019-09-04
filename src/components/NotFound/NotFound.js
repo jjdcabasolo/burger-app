@@ -6,18 +6,19 @@ const notFound = (props) => {
     <Container className='boundary-toolbar-page-content'>
       <Segment basic textAlign='center' style={{ marginTop: '30%', backgroundColor: 'transparent' }} inverted={props.isNight}>
         <Icon inverted={props.isNight} name={props.iconName} size='massive'></Icon>
-        <p style={{
-          fontSize: '1.5em',
-          fontWeight: 'normal',
-          marginTop: '1em',
-        }}>
-          {props.mainMessage}
+        <p
+          className='primary-font font-large'
+          style={{
+            fontWeight: '600',
+            marginTop: '1em',
+          }}
+        >
+          {props.mainMessage.toUpperCase()}
         </p>
-        <p style={{
-          fontSize: '1em',
-          fontWeight: 'normal',
-          marginTop: '-1em',
-        }}>
+        <p
+          className='secondary-font font-normal'
+          style={{ marginTop: '-1em' }}
+        >
           {props.subMessage}
         </p>
       </Segment>

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
@@ -24,9 +24,9 @@ const store = createStore(rootReducer);
 
 const app = (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter base='/'>
       <App/>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
 
