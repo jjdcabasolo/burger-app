@@ -145,7 +145,7 @@ class Receipt extends Component {
                 } else {
                   this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice);
                   this.props.itemClick('', { name: 'orders' });
-                  this.props.history.push('/burger-app/orders');
+                  this.props.history.push('/orders');
                 }
               }}
             />

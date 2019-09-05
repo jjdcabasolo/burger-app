@@ -7,7 +7,6 @@ import './Orders.css';
 import NotFound from '../../components/NotFound/NotFound';
 import Order from './Order/Order';
 import OrderTools from '../../components/Order/OrderTools/OrderTools';
-import ReOrder from './../../components/Order/ReOrder/ReOrder';
 
 import * as orderActions from '../../store/actions/index';
 

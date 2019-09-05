@@ -63,7 +63,7 @@ const introduction = (props) => {
       key: "1-start-button",
       content: (
         <Fade delay={3000}>
-          <Link to='/burger-app/builder'>
+          <Link to='/builder'>
             <Button
               animated
               basic

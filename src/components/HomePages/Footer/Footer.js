@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
+import { Grid, Header, List, Segment } from 'semantic-ui-react';
 
 import Aux from '../../../hoc/Auxilliary';
 

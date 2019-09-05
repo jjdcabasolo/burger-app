@@ -35,7 +35,7 @@ const sidebar = (props) => {
             </Header>
           </Menu.Item>
 
-          <Link to='/burger-app'>
+          <Link to='/'>
             <Menu.Item
               as='div'
               content='HOME ¬'
@@ -48,7 +48,7 @@ const sidebar = (props) => {
             />
           </Link>
 
-          <Link to='/burger-app/builder'>
+          <Link to='/builder'>
             <Menu.Item
               as='div'
               content='BUILDER ¬'
@@ -61,7 +61,7 @@ const sidebar = (props) => {
             />
           </Link>
 
-          <Link to='/burger-app/orders'>
+          <Link to='/orders'>
             <Menu.Item
               as='div'
               content='ORDERS ¬'
@@ -74,7 +74,7 @@ const sidebar = (props) => {
             />
           </Link>
 
-          <Link to='/burger-app/help'>
+          <Link to='/help'>
             <Menu.Item
               as='div'
               content='HELP ¬'

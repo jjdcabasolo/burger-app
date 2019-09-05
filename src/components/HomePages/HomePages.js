@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Segment, Visibility } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 
 import Aux from './../../hoc/Auxilliary';
 
@@ -25,7 +25,7 @@ const homePages = (props) => {
         return (
           <div className='section' key={index}>
             <Segment textAlign='center' vertical>
-              <Container text>                
+              <Container text>
                 {element}
               </Container>
             </Segment>
