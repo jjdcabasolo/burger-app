@@ -5,7 +5,7 @@ import './Toolbar.css';
 import { Slide } from 'react-reveal';
 
 const toolbar = (props) => {
-  const isHome = props.activeItem === 'home' || props.activeItem === '' || props.activeItem === '/burger-app';
+  const isHome = props.activeItem === 'home' || props.activeItem === '';
 
   let currentPage;
   if (isHome) {

@@ -9,7 +9,7 @@ const orderTools = (props) => {
   const sortBy = (isText) => {
     return (
       <Aux>
-        <Label style={{ marginRight: '10px' }}>Sort by</Label>
+        <Label style={{ marginRight: '10px' }}>SORT BY</Label>
         <Button.Group>
           <Button
             active={props.activeSort === 'date'}
@@ -59,7 +59,7 @@ const orderTools = (props) => {
   const ingredientSort = (hasContent) => {
     return (
       <Aux>
-        <Label style={{ marginRight: '10px', marginLeft: '20px' }}>Ingredients</Label>
+        <Label style={{ marginRight: '10px', marginLeft: '20px' }}>INGREDIENTS</Label>
         <Button.Group
           buttons={[
             {
@@ -103,7 +103,7 @@ const orderTools = (props) => {
   const changeLayout = (hasContent) => {
     return (
       <Aux>
-        <Label style={{ marginRight: '10px', marginLeft: '20px' }}>Layout</Label>
+        <Label style={{ marginRight: '10px', marginLeft: '20px' }}>LAYOUT</Label>
         <Button.Group
           buttons={[
             {
@@ -131,9 +131,9 @@ const orderTools = (props) => {
   };
 
   return (
-    <Aux>
+    <div className='order-tools-container'>
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-        <Segment basic textAlign='right' style={{ margin: '14px 0 0 0' }}>
+        <Segment basic textAlign='right' id='order-tools-segment'>
           <Responsive minWidth={Responsive.onlyComputer.minWidth}>
             <div style={{ display: 'inline' }}>
               {sortBy(false)}
@@ -163,7 +163,7 @@ const orderTools = (props) => {
                   props.toggleTools();
                   const position = props.isOpen ? '288px' : '0px';
                   document.getElementById('order-tools-mobile').style.transform = 'translate(' + position + ')';
-                }}  
+                }}
                 style={{ marginRight: '16px' }}
               />
               {ingredientSort(false)}
@@ -171,7 +171,7 @@ const orderTools = (props) => {
           </List>
         </Segment>
       </Responsive>
-    </Aux>
+    </div>
   );
 }
 

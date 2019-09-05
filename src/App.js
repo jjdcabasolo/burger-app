@@ -33,7 +33,7 @@ const nightStyle = [
 
 class App extends Component {
   state = {
-    activeItem: window.location.pathname.replace('/burger-app/', ''),
+    activeItem: window.location.hash.replace('#/', ''),
     openSidebar: false,
     isNightMode: false,
     showScroll: true,
@@ -57,7 +57,7 @@ class App extends Component {
           toggleNight={this.nightModeHandler}
         >
           <Switch>
-            <Route path='/burger-app/builder' render={(props) =>
+            <Route path='/builder' render={(props) =>
               <BurgerBuilder
                 {...props}
                 isNight={this.state.isNightMode}
@@ -68,7 +68,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/burger-app/orders' render={(props) =>
+            <Route path='/orders' render={(props) =>
               <Orders
                 {...props}
                 isNight={this.state.isNightMode}
@@ -77,7 +77,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/burger-app/help' render={(props) =>
+            <Route path='/help' render={(props) =>
               <NotFound
                 isNight={this.state.isNightMode}
                 nightStyle={nightStyle}
@@ -87,7 +87,7 @@ class App extends Component {
               />
             } />
 
-            <Route path='/burger-app' exact render={(props) =>
+            <Route path='/' exact render={(props) =>
               <Home
                 {...props}
                 isNight={this.state.isNightMode}
