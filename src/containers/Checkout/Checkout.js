@@ -71,7 +71,7 @@ class Checkout extends Component {
         />
 
         {this.props.stepNumber === 3 ?
-          <Button.Group attached='bottom'>
+          <Button.Group attached='bottom' className='segment-btn-grp'>
             <Button
               content='Cancel'
               icon='remove'

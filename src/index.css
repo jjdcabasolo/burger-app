@@ -116,9 +116,9 @@ tr.fade.right.hidden.transition {
   border-width: 3px 3px 3px 3px !important;
 }
 
-.ui[class*="bottom attached"].buttons .button:first-child,
-.ui[class*="bottom attached"].buttons .button:nth-child(2),
-.ui[class*="bottom attached"].buttons .button:last-child {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:first-child,
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:nth-child(2),
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:last-child {
   border-radius: 0 !important;
   border-bottom-width: 3px !important;
   border-top-width: 0px !important;
@@ -127,23 +127,23 @@ tr.fade.right.hidden.transition {
   border-style: solid;
 }
 
-.ui[class*="bottom attached"].buttons .button:first-child {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:first-child {
   border-left-width: 3px !important;
 }
 
-.ui[class*="bottom attached"].buttons .button:nth-child(2) {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:nth-child(2) {
   border-left-width: 0px !important;
 }
 
-.ui[class*="bottom attached"].buttons .button:last-child {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:last-child {
   border-left-width: 0px !important;
   background-color: #ffcf44;
   color: black;
 }
 
-.ui[class*="bottom attached"].buttons .button:first-child:hover,
-.ui[class*="bottom attached"].buttons .button:nth-child(2):hover,
-.ui[class*="bottom attached"].buttons .button:last-child:hover {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:first-child:hover,
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:nth-child(2):hover,
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:last-child:hover {
   color: #373737;
   background-color: white;
   border-bottom-width: 3px !important;
@@ -151,7 +151,7 @@ tr.fade.right.hidden.transition {
   border-right-width: 3px !important;
 }
 
-.ui[class*="bottom attached"].buttons .button:first-child:hover {
+.segment-btn-grp.ui[class*="bottom attached"].buttons .button:first-child:hover {
   border-left-width: 3px !important;
 }
 
@@ -179,7 +179,7 @@ td .ui.icon.button {
   border-style: solid;
 }
 
-.ui.buttons .button:last-child {
+.segment-btn-grp.ui.buttons .button:last-child {
   background-color: #ffcf44;
 }
 

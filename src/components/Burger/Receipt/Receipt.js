@@ -87,7 +87,7 @@ class Receipt extends Component {
           <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero. </p>
         </Segment>
 
-        <Button.Group attached='bottom'>
+        <Button.Group attached='bottom' className='segment-btn-grp'>
           <Button
             content='Builder'
             icon='add'

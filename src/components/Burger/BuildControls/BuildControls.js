@@ -82,7 +82,7 @@ const buildControls = (props) => (
     </Segment>
 
     {props.stepNumber === 1 ?
-      <Button.Group attached='bottom'>
+      <Button.Group attached='bottom' className='segment-btn-grp'>
         <Button
           content='Clear'
           icon='trash'
