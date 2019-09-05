@@ -7,6 +7,13 @@ import './Ingredients.css';
 
 import Aux from '../../../hoc/Auxilliary';
 
+const labelColor = {
+  salad: 'green',
+  tomato: 'red',
+  cheese: 'yellow',
+  meat: 'brown',
+}
+
 const ingredients = (props) => {
   return (
     <Aux>
@@ -18,9 +25,12 @@ const ingredients = (props) => {
               className='ingredients-margin'
               image
               key={index}
-              size='large' >
+              size='large'
+              color={labelColor[element]}
+              id='ingredients-border'
+            >
               {props.ingredients[element]} &nbsp;
-              <Label.Detail>{element.toUpperCase()}</Label.Detail>
+              <Label.Detail className='ingredient-details'>{element.toUpperCase()}</Label.Detail>
             </Label>
           );
         })
@@ -28,7 +38,7 @@ const ingredients = (props) => {
 
       <Fade left when={props.showTotal}>
         <Label
-          className='ingredients-margin ingredients-total'
+          className='ingredients-margin'
           image
           size='large' >
           {'$ ' + parseFloat(props.totalPrice).toFixed(2)}

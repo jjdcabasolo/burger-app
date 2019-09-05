@@ -240,24 +240,31 @@ td .ui.icon.button {
 
 .ui.basic.inverted.button {
   border-radius: 0 !important;
-  border-bottom-width: 3px !important;
-  border-top-width: 0px !important;
-  border-right-width: 3px !important;
+  border-width: 3px;
   border-color: #373737;
   border-style: solid;
-  border-left-width: 0px !important;
   color: black;
   font-family: 'Roboto Mono';
   font-weight: 500;
   font-size: 17px;
 }
 
+.ui.basic.inverted.button#btn-primary:hover,
+.ui.basic.inverted.button#btn-secondary:hover {
+  color: #373737 !important;
+  background-color: white !important;
+}
+
 .ui.basic.inverted.button#btn-primary {
   background-color: #ffcf44 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 .ui.basic.inverted.button#btn-secondary {
   background-color: #373737 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 /* label */
@@ -275,4 +282,17 @@ td .ui.icon.button {
   background-color: #373737 !important;
   border: 3px #373737 solid;
   color: white !important;
+}
+
+.ui.label>.detail {
+  opacity: 0.95 !important;
+}
+
+/* modal stuff */
+.ui.modal .actions>.button {
+  margin-left: 0 !important;
+}
+
+.ui.dimmer {
+  background-color: rgba(0,0,0,1) !important;
 }

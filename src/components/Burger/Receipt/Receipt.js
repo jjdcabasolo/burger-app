@@ -113,11 +113,10 @@ class Receipt extends Component {
           size='small'
           open={this.state.isModalOpen}
           onClose={this.handleClose}
-          closeIcon
         >
-          <Header icon='warning' content='Finishing order' className='primary-font font-large' />
+          <Header content='PLACING ORDER' className='primary-font font-large' />
           <Modal.Content>
-            <p className='primary-font font-normal'>
+            <p className='secondary-font font-normal'>
               Are you really sure you want to place this order?
             </p>
           </Modal.Content>
@@ -137,6 +136,7 @@ class Receipt extends Component {
               content='Yes'
               icon='checkmark'
               inverted
+              className='receipt-button-remove-left-border'
               onClick={() => {
                 if (this.props.reOrderDetails) {
                   this.props.onOrderAdded(this.props.inputMap, this.props.reOrderIngredients, this.props.reOrderPrice);

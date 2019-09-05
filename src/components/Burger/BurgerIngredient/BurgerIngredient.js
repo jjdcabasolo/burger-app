@@ -35,10 +35,10 @@ const burgerIngredient = (props) => {
       return (
         <Slide left>
           <div className="Cheese">
-            {/* <div className="CheeseDrip1"></div>
+            <div className="CheeseDrip1"></div>
             <div className="CheeseDrip2"></div>
             <div className="CheeseDrip3"></div>
-            <div className="CheeseDrip4"></div> */}
+            <div className="CheeseDrip4"></div>
           </div>
         </Slide>
       );
@@ -47,12 +47,12 @@ const burgerIngredient = (props) => {
       return (
         <Slide left>
           <div className="Salad">
-            {/* <div className="SaladLeaf1"></div>
+            <div className="SaladLeaf1"></div>
             <div className="SaladLeaf2"></div>
             <div className="SaladLeaf3"></div>
             <div className="SaladLeaf4"></div>
             <div className="SaladLeaf5"></div>
-            <div className="SaladLeaf6"></div> */}
+            <div className="SaladLeaf6"></div>
           </div>
         </Slide>
       );
