@@ -1,15 +1,16 @@
 .order-remove {
   position: absolute;
-  right: 7px;
+  right: -3px;
+  top: 1px;
 }
 
 .order-main-content {
-  height: 155px;
+  height: 350px;
 }
 
 @media (max-width: 1201px) {
   .order-main-content {
-    height: 190px;
+    height: 250px;
   }
 }
 
@@ -17,4 +18,10 @@
   .order-main-content {
     height: 120px;
   }
+}
+
+.order-card {
+  border: 3px #373737 solid !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }

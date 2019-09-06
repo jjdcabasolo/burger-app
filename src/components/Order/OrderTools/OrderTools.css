@@ -9,7 +9,9 @@
 }
 
 .order-tools-container {
-  margin-top: 15vh;
+  position: fixed;
+  top: 8em;
+  margin-left: -4px;
 }
 
 #order-tools-segment {

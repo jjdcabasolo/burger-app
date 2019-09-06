@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Button, Label, List, Responsive, Segment, Icon } from 'semantic-ui-react';
+import { Slide } from 'react-reveal';
+
 import './OrderTools.css';
 
 import Aux from '../../../hoc/Auxilliary';
@@ -135,18 +137,19 @@ const orderTools = (props) => {
     <div className='order-tools-container'>
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
         <Segment basic textAlign='right' id='order-tools-segment'>
-          <Responsive minWidth={Responsive.onlyComputer.minWidth}>
-            <div style={{ display: 'inline' }}>
-              {sortBy(false)}
-            </div>
-            <div style={{ display: 'inline' }}>
-              {ingredientSort(true)}
-            </div>
-            <div style={{ display: 'inline' }}>
-              {changeLayout(true)}
-            </div>
-            <span className='primary-font order-tools-tool-title'>// OPTIONS</span>
-          </Responsive>
+          <Slide left>
+            <Responsive minWidth={Responsive.onlyComputer.minWidth}>
+              <div style={{ display: 'inline' }}>
+                {sortBy(false)}
+              </div>
+              <div style={{ display: 'inline' }}>
+                {ingredientSort(true)}
+              </div>
+              <div style={{ display: 'inline' }}>
+                {changeLayout(true)}
+              </div>
+            </Responsive>
+          </Slide>
 
           <Responsive {...Responsive.onlyTablet}>
             {ingredientSort(false)}

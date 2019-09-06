@@ -209,30 +209,13 @@ class Orders extends Component {
     };
 
     return (
-      <Container>
+      <Container className='orders-container'>
         {message ?
           message
 
           :
 
           <Aux>
-            <OrderTools
-              activeLayout={this.state.activeLayout}
-              activeSort={this.state.activeSort}
-              dateOrder={this.state.dateOrder}
-              isCheeseActive={this.state.isCheeseActive}
-              isMeatActive={this.state.isMeatActive}
-              isNight={this.props.isNight}
-              isOpen={this.state.isMobileToolsOpen}
-              isSaladActive={this.state.isSaladActive}
-              isTomatoActive={this.state.isTomatoActive}
-              priceOrder={this.state.priceOrder}
-              toggleIngredient={this.toggleIngredientHandler}
-              toggleOrder={this.toggleOrder}
-              toggleTools={this.toggleToolsHandler}
-              switchViewSort={this.switchViewSortHandler}
-            />
-
             {orders.length !== 0 ?
               isCardView ?
                 <Grid stackable>
@@ -282,6 +265,23 @@ class Orders extends Component {
                 subMessage={'Nobody ordered a bun-only burger. Besides, it is not possible in the first place.'}
               />
             }
+
+            <OrderTools
+              activeLayout={this.state.activeLayout}
+              activeSort={this.state.activeSort}
+              dateOrder={this.state.dateOrder}
+              isCheeseActive={this.state.isCheeseActive}
+              isMeatActive={this.state.isMeatActive}
+              isNight={this.props.isNight}
+              isOpen={this.state.isMobileToolsOpen}
+              isSaladActive={this.state.isSaladActive}
+              isTomatoActive={this.state.isTomatoActive}
+              priceOrder={this.state.priceOrder}
+              toggleIngredient={this.toggleIngredientHandler}
+              toggleOrder={this.toggleOrder}
+              toggleTools={this.toggleToolsHandler}
+              switchViewSort={this.switchViewSortHandler}
+            />
           </Aux>
         }
       </Container>

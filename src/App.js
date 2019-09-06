@@ -82,8 +82,8 @@ class App extends Component {
                 isNight={this.state.isNightMode}
                 nightStyle={nightStyle}
                 iconName='help'
-                mainMessage='Wala pa. Teka lang. Huhu.'
-                subMessage={'Matatapos din \'tong page na to. Konting tulog na lang.'}
+                mainMessage={'Help?! You don\'t need any.'}
+                subMessage={'I know you can figure this out on your own 😏'}
               />
             } />
 
