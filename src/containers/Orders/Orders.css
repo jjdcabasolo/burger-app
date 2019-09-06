@@ -34,7 +34,7 @@
        -moz-column-gap: 0;
             column-gap: 0;
   }
-  
+
   .ui.doubling.masonry.grid[class*="four column"] > .column {
     width: 100% !important;
   }
@@ -49,7 +49,7 @@
 }
 
 /* card animation on page load */
- 
+
 @keyframes loadCards {
   0% {
     opacity: 0;
@@ -60,5 +60,9 @@
 }
 
 .order-load-cards {
-  animation: loadCards 1s ease-in-out; 
+  animation: loadCards 1s ease-in-out;
+}
+
+.orders-table {
+  padding-top: 40px;
 }

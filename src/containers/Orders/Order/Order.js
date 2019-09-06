@@ -94,17 +94,18 @@ class Order extends Component {
             duration={{ hide: animationDuration, show: animationDuration }}
           >
             <Table.Row style={{ margin: '-15px 0' }}>
-              <Table.Cell width={3}>
+              <Table.Cell width={3} className='secondary-font'>
                 {dateSplit[0]}
               </Table.Cell>
-              <Table.Cell width={3}>
+              <Table.Cell width={3} className='secondary-font'>
                 {dateSplit[1]}
               </Table.Cell>
-              <Table.Cell width={3}>
-                &nbsp;$ {this.props.item.totalPrice.toFixed(2)}
-              </Table.Cell>
               <Table.Cell width={6}>
-                {this.props.addOrderDetails(this.props.item.ingredients)}
+                <Ingredients
+                  ingredients={this.props.item.ingredients}
+                  totalPrice={this.props.item.totalPrice}
+                  showTotal
+                />
               </Table.Cell>
               <Table.Cell width={1}>
                 <Button.Group

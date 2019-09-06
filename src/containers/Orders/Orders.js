@@ -226,34 +226,28 @@ class Orders extends Component {
 
                 :
 
-                <Table basic='very' compact='very' selectable singleLine unstackable inverted={this.props.isNight} textAlign='center'>
-                  <Table.Header>
-                    <Table.Row>
-                      <Table.HeaderCell sorted='ascending'>
-                        <Icon name='calendar alternate' size='large' />
-                        &nbsp; Date
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='clock outline' size='large' />
-                        &nbsp; Time
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='money bill alternate outline' size='large' />
-                        &nbsp; Price
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='food' size='large' />
-                        &nbsp; Ingredients
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='edit outline' size='large' />
-                      </Table.HeaderCell>
-                    </Table.Row>
-                  </Table.Header>
-                  <Table.Body>
-                    {orders.map((item, count) => { return orderStructure(item, count); })}
-                  </Table.Body>
-                </Table>
+                <div className='orders-table'>
+                  <Table basic='very' compact='very' selectable singleLine unstackable inverted={this.props.isNight} textAlign='center'>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.HeaderCell sorted='ascending'>
+                          &nbsp; DATE
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                          &nbsp; TIME
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                          &nbsp; ORDER DETAILS
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                        </Table.HeaderCell>
+                      </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                      {orders.map((item, count) => { return orderStructure(item, count); })}
+                    </Table.Body>
+                  </Table>
+                </div>
 
               :
 

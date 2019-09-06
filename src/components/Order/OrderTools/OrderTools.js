@@ -64,7 +64,6 @@ const orderTools = (props) => {
           {
             key: 'salad',
             color: props.isSaladActive ? 'green' : null,
-            content: hasContent ? 'salad' : null,
             icon: props.isSaladActive ? 'check' : 'remove',
             onClick: () => props.toggleIngredient('isSaladActive'),
             name: 'salad',
@@ -73,7 +72,6 @@ const orderTools = (props) => {
           {
             key: 'tomato',
             color: props.isTomatoActive ? 'red' : null,
-            content: hasContent ? 'tomato' : null,
             icon: props.isTomatoActive ? 'check' : 'remove',
             onClick: () => props.toggleIngredient('isTomatoActive'),
             name: 'tomato',
@@ -82,7 +80,6 @@ const orderTools = (props) => {
           {
             key: 'meat',
             color: props.isMeatActive ? 'brown' : null,
-            content: hasContent ? 'meat' : null,
             icon: props.isMeatActive ? 'check' : 'remove',
             onClick: () => props.toggleIngredient('isMeatActive'),
             name: 'meat',
@@ -91,7 +88,6 @@ const orderTools = (props) => {
           {
             key: 'cheese',
             color: props.isCheeseActive ? 'yellow' : null,
-            content: hasContent ? 'cheese' : null,
             icon: props.isCheeseActive ? 'check' : 'remove',
             onClick: () => props.toggleIngredient('isCheeseActive'),
             name: 'cheese',
@@ -140,13 +136,13 @@ const orderTools = (props) => {
           <Slide left>
             <Responsive minWidth={Responsive.onlyComputer.minWidth}>
               <div style={{ display: 'inline' }}>
+                {changeLayout(true)}
+              </div>
+              <div style={{ display: 'inline' }}>
                 {sortBy(false)}
               </div>
               <div style={{ display: 'inline' }}>
                 {ingredientSort(true)}
-              </div>
-              <div style={{ display: 'inline' }}>
-                {changeLayout(true)}
               </div>
             </Responsive>
           </Slide>
