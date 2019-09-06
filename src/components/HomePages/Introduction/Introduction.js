@@ -75,7 +75,7 @@ const introduction = (props) => {
               className='primary-font'
               id='home-builder'
             >
-              <Button.Content visible>GET STARTED</Button.Content>
+              <Button.Content visible className='secondary-font'>get started</Button.Content>
               <Button.Content hidden>
                 <Icon name='arrow right' />
               </Button.Content>
