@@ -43,7 +43,7 @@
   margin-top: 0px;
   margin-left: -22px;
   border-radius: 0% !important;
-  box-shadow: none;  
+  box-shadow: none;
 }
 
 .toolbar-night-mode:hover,
@@ -62,7 +62,7 @@
 
 #toolbar-navbar {
   background-color: transparent;
-  padding: 5vh 5vh 5vh 7vh;
+  padding: 5vh 5vh 0 7vh;
 }
 
 .ui.left.visible.sidebar {

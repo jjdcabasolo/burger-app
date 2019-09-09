@@ -1,9 +1,16 @@
 .ingredients-margin {
-  margin-top: 10px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
   margin-left: 10px !important;
   margin-right: 0 !important;
 }
 
-.ingredients-total {
-  margin-top: 8px !important;
+#ingredients-border {
+  border-color: #373737 !important;
+}
+
+.ingredient-details {
+  border-width: 0 0 0 3px;
+  border-color: #373737;
+  border-style: solid;
 }

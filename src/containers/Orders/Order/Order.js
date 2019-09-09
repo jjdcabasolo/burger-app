@@ -4,6 +4,7 @@ import { Button, Card, Grid, Label, List, Table, Transition } from 'semantic-ui-
 import './Order.css';
 
 import Aux from '../../../hoc/Auxilliary';
+import Ingredients from '../../../components/UI/Ingredients/Ingredients';
 
 class Order extends Component {
   constructor() {
@@ -36,39 +37,49 @@ class Order extends Component {
             duration={{ hide: animationDuration, show: animationDuration }}
           >
             <Grid.Column style={{ marginTop: '28px' }} computer={4} tablet={8}>
-              <Card style={this.props.isNight ? this.props.nightStyle[1] : null}>
+              <Card style={this.props.isNight ? this.props.nightStyle[1] : null} className='order-card'>
                 <Card.Content className='order-main-content'>
                   <Card.Header style={this.props.isNight ? { color: 'white' } : null} className='order-remove'>
-                    <Button size='mini' icon='shop' onClick={() => {
-                      this.props.handleOpen();
-                      this.props.updateItem(this.props.item);
-                    }} />
-                    <Button size='mini' icon='close' onClick={() => {
-                      this.changeVisibility();
-                      setTimeout(() => {
-                        this.props.orderRemoved(this.props.item);
-                      }, animationDuration);
-                    }} />
+                    <Button.Group
+                      className='order-tools-btn-grp'
+                      id='order-tools-toggle'
+                      buttons={[
+                        {
+                          icon: 'shop',
+                          key: 'shop',
+                          onClick: () => {
+                            this.props.loadData(this.props.orders[this.props.count]);
+                            this.props.itemClick('', { name: 'builder' });
+                            this.props.history.push('/builder');
+                          },
+                        },
+                        {
+                          icon: 'minus',
+                          key: 'less',
+                          onClick: () => {
+                            this.changeVisibility();
+                            setTimeout(() => {
+                              this.props.orderRemoved(this.props.item);
+                            }, animationDuration);
+                          }
+                        },
+                      ]}
+                    />
                   </Card.Header>
                   <Card.Description style={this.props.isNight ? { color: 'white' } : null}>
                     <List>
                       <List.Item>
-                        <List.Icon name='calendar alternate' />
-                        <List.Content>{dateSplit[0]}</List.Content>
+                        <List.Content className='secondary-font font-normal'>{dateSplit[0]}</List.Content>
                       </List.Item>
                       <List.Item>
-                        <List.Icon name='clock outline' />
-                        <List.Content>{dateSplit[1]}</List.Content>
+                        <List.Content className='secondary-font font-normal'>{dateSplit[1]}</List.Content>
                       </List.Item>
                     </List>
-                    {this.props.addOrderDetails(this.props.item.ingredients, false)}
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content textAlign='right'>
-                  <Card.Description>
-                    <Label size='big' tag color={this.props.isNight ? 'grey' : null}>
-                      $ {this.props.item.totalPrice.toFixed(2)}
-                    </Label>
+                    <Ingredients
+                      ingredients={this.props.item.ingredients}
+                      totalPrice={this.props.item.totalPrice}
+                      showTotal
+                    />
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -83,29 +94,43 @@ class Order extends Component {
             duration={{ hide: animationDuration, show: animationDuration }}
           >
             <Table.Row style={{ margin: '-15px 0' }}>
-              <Table.Cell width={3}>
+              <Table.Cell width={3} className='secondary-font'>
                 {dateSplit[0]}
               </Table.Cell>
-              <Table.Cell width={3}>
+              <Table.Cell width={3} className='secondary-font'>
                 {dateSplit[1]}
               </Table.Cell>
-              <Table.Cell width={3}>
-                &nbsp;$ {this.props.item.totalPrice.toFixed(2)}
-              </Table.Cell>
               <Table.Cell width={6}>
-                {this.props.addOrderDetails(this.props.item.ingredients)}
+                <Ingredients
+                  ingredients={this.props.item.ingredients}
+                  totalPrice={this.props.item.totalPrice}
+                  showTotal
+                />
               </Table.Cell>
               <Table.Cell width={1}>
-                <Button size='mini' icon='shop' onClick={() => {
-                  this.props.handleOpen();
-                  this.props.updateItem(this.props.item);
-                }} />
-                <Button size='mini' icon='close' onClick={() => {
-                  this.changeVisibility();
-                  setTimeout(() => {
-                    this.props.orderRemoved(this.props.item);
-                  }, animationDuration);
-                }} />
+                <Button.Group
+                  buttons={[
+                    {
+                      icon: 'shop',
+                      key: 'shop',
+                      onClick: () => {
+                        this.props.loadData(this.props.orders[this.props.count]);
+                        this.props.itemClick('', { name: 'builder' });
+                        this.props.history.push('/builder');
+                      },
+                    },
+                    {
+                      icon: 'minus',
+                      key: 'less',
+                      onClick: () => {
+                        this.changeVisibility();
+                        setTimeout(() => {
+                          this.props.orderRemoved(this.props.item);
+                        }, animationDuration);
+                      }
+                    },
+                  ]}
+                />
               </Table.Cell>
             </Table.Row>
           </Transition>

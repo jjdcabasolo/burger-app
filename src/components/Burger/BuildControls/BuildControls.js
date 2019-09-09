@@ -82,15 +82,15 @@ const buildControls = (props) => (
     </Segment>
 
     {props.stepNumber === 1 ?
-      <Button.Group attached='bottom'>
+      <Button.Group attached='bottom' className='segment-btn-grp'>
         <Button
-          content='Clear'
+          content='clear'
           icon='trash'
           inverted={props.isNight}
           onClick={props.clear}
         />
         <Button
-          content='Proceed'
+          content='proceed'
           disabled={props.canOrder}
           icon='shop'
           inverted={props.isNight}

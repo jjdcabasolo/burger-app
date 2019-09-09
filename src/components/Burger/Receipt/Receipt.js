@@ -87,20 +87,20 @@ class Receipt extends Component {
           <p className='secondary-font font-small'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi lectus, eleifend non varius sit amet, tristique eget leo. Duis ut tristique libero. </p>
         </Segment>
 
-        <Button.Group attached='bottom'>
+        <Button.Group attached='bottom' className='segment-btn-grp'>
           <Button
-            content='Builder'
+            content='builder'
             icon='add'
             onClick={() => this.props.changeStep(1)}
             classname='receipt-builder-btn'
           />
           <Button
-            content='Delivery'
+            content='delivery'
             icon='truck'
             onClick={() => this.props.changeStep(3)}
           />
           <Button
-            content='Place order'
+            content='place order'
             icon='checkmark'
             onClick={() => this.handleOpen()}
             className='receipt-place-order'
@@ -113,11 +113,10 @@ class Receipt extends Component {
           size='small'
           open={this.state.isModalOpen}
           onClose={this.handleClose}
-          closeIcon
         >
-          <Header icon='warning' content='Finishing order' className='primary-font font-large' />
+          <Header content='PLACING ORDER' className='primary-font font-large' />
           <Modal.Content>
-            <p className='primary-font font-normal'>
+            <p className='secondary-font font-normal'>
               Are you really sure you want to place this order?
             </p>
           </Modal.Content>
@@ -137,6 +136,7 @@ class Receipt extends Component {
               content='Yes'
               icon='checkmark'
               inverted
+              className='receipt-button-remove-left-border'
               onClick={() => {
                 if (this.props.reOrderDetails) {
                   this.props.onOrderAdded(this.props.inputMap, this.props.reOrderIngredients, this.props.reOrderPrice);
@@ -144,6 +144,7 @@ class Receipt extends Component {
                   this.props.handleReOrderClose();
                 } else {
                   this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice);
+                  this.props.clearBuilder();
                   this.props.itemClick('', { name: 'orders' });
                   this.props.history.push('/orders');
                 }

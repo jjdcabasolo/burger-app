@@ -22,7 +22,6 @@
 
 .sidebarmobile-title {
   padding: 0 !important;
-  margin-bottom: 2em;
 }
 
 #sidebarmobile-item-home {
@@ -65,6 +64,10 @@
 
 .ui.massive.vertical.menu {
   width: 37rem !important;
+}
+
+#sidebarmobile-close {
+  margin-top: -20%;
 }
 
 #sidebarmobile-close:hover {

@@ -8,7 +8,7 @@ import NotFound from '../../components/NotFound/NotFound';
 import Order from './Order/Order';
 import OrderTools from '../../components/Order/OrderTools/OrderTools';
 
-import * as orderActions from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
 
 import Aux from '../../hoc/Auxilliary';
 
@@ -70,58 +70,17 @@ class Orders extends Component {
     );
   }
 
-  addOrderDetails = (details, total) => {
-    return (
-      <div style={this.state.activeLayout !== 'card' ? { display: 'inline' } : null}>
-        {Object
-          .keys(details)
-          .map((ingredientKey) => {
-            let ingredient = null;
-            if (details[ingredientKey] !== 0) {
-              ingredient = (
-                <Label
-                  size='large'
-                  image
-                  color={labelColor[ingredientKey]}
-                  style={this.state.activeLayout === 'card' ? { margin: '4px 4px 0 0' } : null}
-                  key={ingredientKey}
-                >
-                  {ingredientKey} &nbsp;
-                  <Label.Detail>{details[ingredientKey]}</Label.Detail>
-                </Label>
-              );
-            }
-            return ingredient;
-          })
-        }
-
-        {total ?
-          <Label
-            size='large'
-            image
-            color='grey'
-            content='Total '
-            detail={'$' + total}
-          />
-          :
-          null
-        }
-      </div>
-    );
-  }
-
   filterIngredients = () => {
     let filteredOrders = [];
     let index = 0;
 
-    this.props.ordersLocal.map((item) => {
+    this.props.ordersLocal.forEach((item) => {
       let toPush = false;
       if (item.ingredients.cheese > 0 && this.state.isCheeseActive) toPush = true;
       else if (item.ingredients.salad > 0 && this.state.isSaladActive) toPush = true;
       else if (item.ingredients.meat > 0 && this.state.isMeatActive) toPush = true;
       else if (item.ingredients.tomato > 0 && this.state.isTomatoActive) toPush = true;
       if (toPush) filteredOrders[index++] = item;
-      return null;
     })
 
     if (this.state.activeSort === 'date') {
@@ -188,15 +147,16 @@ class Orders extends Component {
     const isCardView = this.state.activeLayout === 'card';
 
     let orders = this.filterIngredients();
-    console.log(orders);
     const orderStructure = (item, count) => {
       return (
         <Order
+          {...this.props}
           addOrderDetails={this.addOrderDetails}
           count={count}
           handleOpen={this.handleOpen}
           isCardView={isCardView}
           isNight={this.props.isNight}
+          itemClick={this.props.itemClick}
           item={item}
           key={count}
           nightStyle={this.props.nightStyle}
@@ -204,18 +164,64 @@ class Orders extends Component {
           showCards={this.state.showCards}
           hideCards={this.hideCards}
           updateItem={this.updateItem}
+          loadData={this.props.loadData}
+          orders={orders}
         />
       );
     };
 
     return (
-      <Container>
+      <Container className='orders-container'>
         {message ?
           message
 
           :
 
           <Aux>
+            {orders.length !== 0 ?
+              isCardView ?
+                <Grid stackable>
+                  <Grid.Row>
+                    {orders.map((item, count) => { return orderStructure(item, count); })}
+                  </Grid.Row>
+                </Grid>
+
+                :
+
+                <div className='orders-table'>
+                  <Table basic='very' compact='very' selectable singleLine unstackable inverted={this.props.isNight} textAlign='center'>
+                    <Table.Header>
+                      <Table.Row>
+                        <Table.HeaderCell sorted='ascending'>
+                          &nbsp; DATE
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                          &nbsp; TIME
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                          &nbsp; ORDER DETAILS
+                        </Table.HeaderCell>
+                        <Table.HeaderCell>
+                        </Table.HeaderCell>
+                      </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                      {orders.map((item, count) => { return orderStructure(item, count); })}
+                    </Table.Body>
+                  </Table>
+                </div>
+
+              :
+
+              <NotFound
+                isNight={this.props.isNight}
+                nightStyle={this.props.nightStyle}
+                iconName='frown outline'
+                mainMessage='No results.'
+                subMessage={'Nobody ordered a bun-only burger. Besides, it is not possible in the first place.'}
+              />
+            }
+
             <OrderTools
               activeLayout={this.state.activeLayout}
               activeSort={this.state.activeSort}
@@ -232,56 +238,6 @@ class Orders extends Component {
               toggleTools={this.toggleToolsHandler}
               switchViewSort={this.switchViewSortHandler}
             />
-
-            {orders.length !== 0 ?
-              isCardView ?
-                <Grid stackable>
-                  <Grid.Row>
-                    {orders.map((item, count) => { return orderStructure(item, count); })}
-                  </Grid.Row>
-                </Grid>
-
-                :
-
-                <Table basic='very' compact='very' selectable singleLine unstackable inverted={this.props.isNight} textAlign='center'>
-                  <Table.Header>
-                    <Table.Row>
-                      <Table.HeaderCell sorted='ascending'>
-                        <Icon name='calendar alternate' size='large' />
-                        &nbsp; Date
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='clock outline' size='large' />
-                        &nbsp; Time
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='money bill alternate outline' size='large' />
-                        &nbsp; Price
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='food' size='large' />
-                        &nbsp; Ingredients
-                      </Table.HeaderCell>
-                      <Table.HeaderCell>
-                        <Icon name='edit outline' size='large' />
-                      </Table.HeaderCell>
-                    </Table.Row>
-                  </Table.Header>
-                  <Table.Body>
-                    {orders.map((item, count) => { return orderStructure(item, count); })}
-                  </Table.Body>
-                </Table>
-
-              :
-
-              <NotFound
-                isNight={this.props.isNight}
-                nightStyle={this.props.nightStyle}
-                iconName='frown outline'
-                mainMessage='No results.'
-                subMessage={'Nobody ordered a bun-only burger. Besides, it is not possible in the first place.'}
-              />
-            }
           </Aux>
         }
       </Container>
@@ -297,7 +253,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeOrder: (order) => dispatch(orderActions.orderRemove(order)),
+    removeOrder: (order) => dispatch(actions.orderRemove(order)),
+    loadData: (order) => dispatch(actions.loadData(order)),
   };
 };
 

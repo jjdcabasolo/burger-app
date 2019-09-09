@@ -26,12 +26,18 @@ const sidebar = (props) => {
               inverted={props.isNight}
               className='secondary-font'
             >
-              Menu &nbsp;
+              the list of other pages on this awesome website: &nbsp;
+            </Header>
+            <Header
+              as='h1'
+              inverted={props.isNight}
+              className='secondary-font'
+            >
               <Icon
                 name='cancel'
                 onClick={() => props.closeSidebar()}
                 id='sidebarmobile-close'
-              ></Icon>
+              />
             </Header>
           </Menu.Item>
 

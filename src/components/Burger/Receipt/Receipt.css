@@ -22,3 +22,7 @@
 #receipt.ui.list>.item>.content {
   line-height: 1.75em;
 }
+
+#btn-primary.receipt-button-remove-left-border {
+  border-left-width: 0 !important;
+}

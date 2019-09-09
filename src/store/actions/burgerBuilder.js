@@ -26,3 +26,10 @@ export const ingredientsClear = () => {
     type: actionTypes.REMOVE_ALL_INGREDIENTS,
   };
 };
+
+export const loadData = (orderData) => {
+  return {
+    type: actionTypes.LOAD_DATA_REORDER,
+    orderData: orderData,
+  };
+};

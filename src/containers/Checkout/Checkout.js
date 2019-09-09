@@ -71,16 +71,16 @@ class Checkout extends Component {
         />
 
         {this.props.stepNumber === 3 ?
-          <Button.Group attached='bottom'>
+          <Button.Group attached='bottom' className='segment-btn-grp'>
             <Button
-              content='Cancel'
+              content='cancel'
               icon='remove'
               inverted={this.props.isNight}
               onClick={() => this.props.changeStep(2)}
               style={{ marginTop: '-1px' }}
             />
             <Button
-              content='Order'
+              content='order'
               icon='shop'
               inverted={this.props.isNight}
               onClick={this.checkoutContinuedHandler}

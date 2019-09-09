@@ -142,6 +142,7 @@ class BurgerBuilder extends Component {
                     addOrder={this.props.onOrderAdded}
                     itemClick={this.props.itemClick}
                     form={this.state.form}
+                    clearBuilder={this.props.onIngredientsClear}
                   />
                 </div>
               </Grid.Column>
