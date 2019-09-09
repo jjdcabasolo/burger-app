@@ -14,3 +14,23 @@
   border-color: #373737;
   border-style: solid;
 }
+
+#ingredients-tomato {
+  border-color: #373737 !important;
+  background-color: #db2828 !important;
+}
+
+#ingredients-cheese {
+  border-color: #373737 !important;
+  background-color: #fbbd08 !important;
+}
+
+#ingredients-meat {
+  border-color: #373737 !important;
+  background-color: #a5673f !important;
+}
+
+#ingredients-salad {
+  border-color: #373737 !important;
+  background-color: #21ba45 !important;
+}

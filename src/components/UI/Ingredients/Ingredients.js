@@ -22,12 +22,12 @@ const ingredients = (props) => {
         .map((element, index) => {
           return (
             <Label
-              className='ingredients-margin'
+              id={'ingredients-' + element}
+              className={'ingredients-margin'}
               image
               key={index}
               size='large'
               color={labelColor[element]}
-              id='ingredients-border'
             >
               {props.ingredients[element]} &nbsp;
               <Label.Detail className='ingredient-details'>{element.toUpperCase()}</Label.Detail>
