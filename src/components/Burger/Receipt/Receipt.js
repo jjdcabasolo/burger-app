@@ -89,18 +89,18 @@ class Receipt extends Component {
 
         <Button.Group attached='bottom' className='segment-btn-grp'>
           <Button
-            content='Builder'
+            content='builder'
             icon='add'
             onClick={() => this.props.changeStep(1)}
             classname='receipt-builder-btn'
           />
           <Button
-            content='Delivery'
+            content='delivery'
             icon='truck'
             onClick={() => this.props.changeStep(3)}
           />
           <Button
-            content='Place order'
+            content='place order'
             icon='checkmark'
             onClick={() => this.handleOpen()}
             className='receipt-place-order'
@@ -144,6 +144,7 @@ class Receipt extends Component {
                   this.props.handleReOrderClose();
                 } else {
                   this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice);
+                  this.props.clearBuilder();
                   this.props.itemClick('', { name: 'orders' });
                   this.props.history.push('/orders');
                 }

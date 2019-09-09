@@ -24,7 +24,6 @@ class Order extends Component {
   getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max))
 
   render() {
-    console.log(this.props)
     const date = this.props.item.date.toLocaleString();
     const dateSplit = date.split(', ');
     const animationDuration = 600;
@@ -49,8 +48,9 @@ class Order extends Component {
                           icon: 'shop',
                           key: 'shop',
                           onClick: () => {
-                            this.props.handleOpen();
-                            this.props.updateItem(this.props.item);
+                            this.props.loadData(this.props.orders[this.props.count]);
+                            this.props.itemClick('', { name: 'builder' });
+                            this.props.history.push('/builder');
                           },
                         },
                         {
@@ -114,8 +114,9 @@ class Order extends Component {
                       icon: 'shop',
                       key: 'shop',
                       onClick: () => {
-                        this.props.handleOpen();
-                        this.props.updateItem(this.props.item);
+                        this.props.loadData(this.props.orders[this.props.count]);
+                        this.props.itemClick('', { name: 'builder' });
+                        this.props.history.push('/builder');
                       },
                     },
                     {

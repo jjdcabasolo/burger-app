@@ -15,7 +15,6 @@ const labelColor = {
 }
 
 const ingredients = (props) => {
-  console.log(props);
   return (
     <Aux>
       {Object

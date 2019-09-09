@@ -8,7 +8,7 @@ import NotFound from '../../components/NotFound/NotFound';
 import Order from './Order/Order';
 import OrderTools from '../../components/Order/OrderTools/OrderTools';
 
-import * as orderActions from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
 
 import Aux from '../../hoc/Auxilliary';
 
@@ -70,58 +70,17 @@ class Orders extends Component {
     );
   }
 
-  addOrderDetails = (details, total) => {
-    return (
-      <div style={this.state.activeLayout !== 'card' ? { display: 'inline' } : null}>
-        {Object
-          .keys(details)
-          .map((ingredientKey) => {
-            let ingredient = null;
-            if (details[ingredientKey] !== 0) {
-              ingredient = (
-                <Label
-                  size='large'
-                  image
-                  color={labelColor[ingredientKey]}
-                  style={this.state.activeLayout === 'card' ? { margin: '4px 4px 0 0' } : null}
-                  key={ingredientKey}
-                >
-                  {ingredientKey} &nbsp;
-                  <Label.Detail>{details[ingredientKey]}</Label.Detail>
-                </Label>
-              );
-            }
-            return ingredient;
-          })
-        }
-
-        {total ?
-          <Label
-            size='large'
-            image
-            color='grey'
-            content='Total '
-            detail={'$' + total}
-          />
-          :
-          null
-        }
-      </div>
-    );
-  }
-
   filterIngredients = () => {
     let filteredOrders = [];
     let index = 0;
 
-    this.props.ordersLocal.map((item) => {
+    this.props.ordersLocal.forEach((item) => {
       let toPush = false;
       if (item.ingredients.cheese > 0 && this.state.isCheeseActive) toPush = true;
       else if (item.ingredients.salad > 0 && this.state.isSaladActive) toPush = true;
       else if (item.ingredients.meat > 0 && this.state.isMeatActive) toPush = true;
       else if (item.ingredients.tomato > 0 && this.state.isTomatoActive) toPush = true;
       if (toPush) filteredOrders[index++] = item;
-      return null;
     })
 
     if (this.state.activeSort === 'date') {
@@ -188,15 +147,16 @@ class Orders extends Component {
     const isCardView = this.state.activeLayout === 'card';
 
     let orders = this.filterIngredients();
-    console.log(orders);
     const orderStructure = (item, count) => {
       return (
         <Order
+          {...this.props}
           addOrderDetails={this.addOrderDetails}
           count={count}
           handleOpen={this.handleOpen}
           isCardView={isCardView}
           isNight={this.props.isNight}
+          itemClick={this.props.itemClick}
           item={item}
           key={count}
           nightStyle={this.props.nightStyle}
@@ -204,6 +164,8 @@ class Orders extends Component {
           showCards={this.state.showCards}
           hideCards={this.hideCards}
           updateItem={this.updateItem}
+          loadData={this.props.loadData}
+          orders={orders}
         />
       );
     };
@@ -291,7 +253,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    removeOrder: (order) => dispatch(orderActions.orderRemove(order)),
+    removeOrder: (order) => dispatch(actions.orderRemove(order)),
+    loadData: (order) => dispatch(actions.loadData(order)),
   };
 };
 

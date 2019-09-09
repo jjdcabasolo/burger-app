@@ -1,11 +1,12 @@
-export { 
+export {
   ingredientAdded,
   ingredientRemoved,
   ingredientClear,
   ingredientsClear,
+  loadData,
 } from './burgerBuilder';
 
-export { 
+export {
   orderAdded,
   orderRemove,
   orderDetailsAdded,

@@ -94,13 +94,13 @@ const orderSummary = (props) => {
       {props.stepNumber === 2 ?
         <Button.Group attached='bottom' className='segment-btn-grp'>
           <Button
-            content='Cancel'
+            content='cancel'
             icon='remove'
             inverted={props.isNight}
             onClick={() => props.changeStep(1)}
           />
           <Button
-            content='Checkout'
+            content='checkout'
             icon='checkmark'
             inverted={props.isNight}
             onClick={() => props.changeStep(3)}

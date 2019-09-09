@@ -25,6 +25,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.REMOVE_INGREDIENT: return removeIngredient(state, action);
     case actionTypes.REMOVE_INGREDIENTS: return removeIngredientInstances(state, action);
     case actionTypes.REMOVE_ALL_INGREDIENTS: return updateObject(state, initialState);
+    case actionTypes.LOAD_DATA_REORDER: return loadData(state, action);
     default: return state;
   }
 };
@@ -68,6 +69,14 @@ const removeIngredientInstances = (state, action) => {
       [lowercasedName]: 0,
     },
     ingredientQueue: updatedArray,
+  });
+}
+
+const loadData = (state, action) => {
+  return updateObject(state, {
+    ingredients: action.orderData.ingredients,
+    totalPrice: action.orderData.totalPrice,
+    ingredientQueue: [],
   });
 }
 
