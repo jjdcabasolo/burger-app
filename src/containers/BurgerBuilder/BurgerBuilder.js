@@ -27,7 +27,10 @@ const INGREDIENT_PRICES = {
 }
 
 class BurgerBuilder extends Component {
-  state = { stepNumber: 1, form: false, }
+  state = {
+    stepNumber: 1,
+    form: false,
+  }
 
   updatePurchaseState = (ingredients, type) => {
     const sum = Object
@@ -43,6 +46,7 @@ class BurgerBuilder extends Component {
   }
 
   changeStep = (index) => this.setState({ stepNumber: +index, });
+
   formComplete = (boolean) => this.setState({ form: boolean })
 
   render() {

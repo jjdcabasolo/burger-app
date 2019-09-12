@@ -65,7 +65,9 @@ const burgerIngredient = (props) => {
       );
 
     default:
-      break;
+      return (
+        <div className='secondary-font'>there's an error on your code.</div>
+      );
   }
 }
 
