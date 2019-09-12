@@ -8,7 +8,7 @@ import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = (props) => {
-  console.log("hell" + props);
+  console.log("hello" + props);
   let transformedIngredients = [];
   for (const ingredient in props.ingredients) {
     transformedIngredients.push(<BurgerIngredient key={ingredient} type={props.ingredients[ingredient]} />);
