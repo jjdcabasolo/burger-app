@@ -1,6 +1,6 @@
 
 # action taken from: https://github.com/peaceiris/actions-gh-pages
-name: [Deployment] Automated GitHub Pages deployment on master push
+name: github pages
 
 on:
   push:
