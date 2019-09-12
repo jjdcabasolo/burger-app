@@ -138,16 +138,10 @@ class Receipt extends Component {
               inverted
               className='receipt-button-remove-left-border'
               onClick={() => {
-                if (this.props.reOrderDetails) {
-                  this.props.onOrderAdded(this.props.inputMap, this.props.reOrderIngredients, this.props.reOrderPrice);
-                  this.handleClose();
-                  this.props.handleReOrderClose();
-                } else {
-                  this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice);
-                  this.props.clearBuilder();
-                  this.props.itemClick('', { name: 'orders' });
-                  this.props.history.push('/orders');
-                }
+                this.props.onOrderAdded(this.props.inputMap, this.props.ingredients, this.props.totalPrice, this.props.ingredientQueue);
+                this.props.clearBuilder();
+                this.props.itemClick('', { name: 'orders' });
+                this.props.history.push('/orders');
               }}
             />
           </Modal.Actions>
@@ -162,6 +156,7 @@ class Receipt extends Component {
 const mapStateToProps = state => {
   return {
     ingredients: state.build.ingredients,
+    ingredientQueue: state.build.ingredientQueue,
     totalPrice: state.build.totalPrice,
     inputMap: state.order.inputMap,
   };
@@ -170,7 +165,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onOrderDetailAdded: (orderDetails) => dispatch(ordersActions.orderDetailsAdded(orderDetails)),
-    onOrderAdded: (orderDetails, burgerIngredients, burgerPrice) => dispatch(ordersActions.orderAdded(orderDetails, burgerIngredients, burgerPrice)),
+    onOrderAdded: (orderDetails, burgerIngredients, burgerPrice, ingredientQueue) => dispatch(ordersActions.orderAdded(orderDetails, burgerIngredients, burgerPrice, ingredientQueue)),
   };
 }
 

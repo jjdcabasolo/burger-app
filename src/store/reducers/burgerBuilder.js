@@ -76,7 +76,7 @@ const loadData = (state, action) => {
   return updateObject(state, {
     ingredients: action.orderData.ingredients,
     totalPrice: action.orderData.totalPrice,
-    ingredientQueue: [],
+    ingredientQueue: action.orderData.ingredientQueue,
   });
 }
 

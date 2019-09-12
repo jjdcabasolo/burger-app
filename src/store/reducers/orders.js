@@ -56,6 +56,7 @@ const addOrder = (state, action) => {
       address: address,
     },
     date: new Date(),
+    ingredientQueue: action.ingredientQueue,
   }
 
   return updateObject(state, {

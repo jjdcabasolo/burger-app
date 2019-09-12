@@ -8,11 +8,11 @@ import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = (props) => {
-  console.log("hello" + props);
   let transformedIngredients = [];
-  for (const ingredient in props.ingredients) {
-    transformedIngredients.push(<BurgerIngredient key={ingredient} type={props.ingredients[ingredient]} />);
-  }
+
+  props.ingredientQueue.forEach((e, i) => {
+    transformedIngredients.push(<BurgerIngredient key={i} type={e} />);
+  });
 
   if (transformedIngredients.length === 0) {
     transformedIngredients = <p style={{ margin: '1em 0 1em 0em', fontWeight: '500' }} className='secondary-font'>Please start adding ingredients.</p>;
@@ -47,7 +47,7 @@ const Burger = (props) => {
 
 const mapStateToProps = state => {
   return {
-    ingredients: state.build.ingredients,
+    ingredientQueue: state.build.ingredientQueue,
   };
 };
 
