@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { Header, Segment } from 'semantic-ui-react';
 
 import './Burger.css';
 
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
-const burger = (props) => {
+const Burger = (props) => {
+  console.log("hell" + props);
   let transformedIngredients = [];
   for (const ingredient in props.ingredients) {
     transformedIngredients.push(<BurgerIngredient key={ingredient} type={props.ingredients[ingredient]} />);
@@ -42,4 +45,10 @@ const burger = (props) => {
   );
 };
 
-export default burger;
+const mapStateToProps = state => {
+  return {
+    ingredients: state.build.ingredients,
+  };
+};
+
+export default connect(mapStateToProps, null)(Burger);
