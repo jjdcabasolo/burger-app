@@ -1,28 +1,29 @@
-name: Deploy to ghpages
+
+# action taken from: https://github.com/peaceiris/actions-gh-pages
+name: github pages
 
 on:
-  pull_request:
+  push:
     branches:
     - master
 
 jobs:
-  deploy:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - uses: actions/checkout@master
+
+    - name: build
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, and deploy
-      run: |
+        node-version: '10.16'
+    - run: |
         npm install
-        npm run deploy
+        npm run build
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v2.2.0
       env:
-        CI: true
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
