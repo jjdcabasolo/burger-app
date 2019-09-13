@@ -10,4 +10,5 @@ export {
   orderAdded,
   orderRemove,
   orderDetailsAdded,
+  orderDetailsRemoved,
 } from './orders';
