@@ -1,5 +1,4 @@
 
-# action taken from: https://github.com/peaceiris/actions-gh-pages
 name: github pages
 
 on:
@@ -11,15 +10,15 @@ jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
-    - name: [Checkout] Checking out master parmesanio
+    - name: Checking out master parmesanio
       uses: actions/checkout@master
 
-    - name: [Node] Setting up Node parmesanio
+    - name: Setting up Node parmesanio
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
         
-    - name: [Scripts] Starting parmesanio scripts
+    - name: Starting parmesanio scripts
       run: |
         npm install
         git config --global user.email "abasolojohnjourish@gmail.com"
