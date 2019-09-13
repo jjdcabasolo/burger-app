@@ -15,7 +15,7 @@ const initialState = {
       details: {name: "John Doe", email: "a", number: "a", address: "undefined"},
       ingredients: {salad: 1, tomato: 1, cheese: 1, meat: 1},
       ingredientQueue: ['salad', 'tomato', 'cheese', 'meat'],
-      totalPrice: 4.7,
+      totalPrice: 6.9,
     },
   ],
 };
@@ -89,7 +89,6 @@ const removeOrder = (state, action) => {
 };
 
 const addOrderDetails = (state, action) => {
-  console.log("adding order deets", action.orderDetails)
   return updateObject(state, {
     inputMap: action.orderDetails,
   });

@@ -92,6 +92,24 @@ const sidebar = (props) => {
               id='sidebarmobile-item-help'
             />
           </Link>
+
+          <Menu.Item
+            as='div'
+            content='GITHUB ¬'
+            onClick={() => {
+              window.open('https://github.com/jjdcabasolo', '_blank');
+            }}
+            id='sidebarmobile-item-github'
+          />
+
+          <Menu.Item
+            as='div'
+            content='FIGMA ¬'
+            onClick={() => {
+              window.open('https://www.figma.com/file/jzozvMGv47MFT93TWZ62Gm/Burger-App', '_blank');
+            }}
+            id='sidebarmobile-item-figma'
+          />
         </Sidebar>
 
         <Toolbar
