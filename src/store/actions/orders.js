@@ -19,7 +19,13 @@ export const orderRemove = (order) => {
 
 export const orderDetailsAdded = (orderDetails) => {
   return {
-    type: actionTypes.ORDER_DETAILS,
+    type: actionTypes.ADD_ORDER_DETAILS,
     orderDetails: orderDetails,
+  };
+}
+
+export const orderDetailsRemoved = () => {
+  return {
+    type: actionTypes.REMOVE_ORDER_DETAILS,
   };
 }

@@ -24,7 +24,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_ORDER: return addOrder(state, action);
     case actionTypes.REMOVE_ORDER: return removeOrder(state, action);
-    case actionTypes.ORDER_DETAILS: return addOrderDetails(state, action);
+    case actionTypes.ADD_ORDER_DETAILS: return addOrderDetails(state, action);
+    case actionTypes.REMOVE_ORDER_DETAILS: return removeOrderDetails(state, action);
     default: return state;
   }
 };
@@ -88,8 +89,21 @@ const removeOrder = (state, action) => {
 };
 
 const addOrderDetails = (state, action) => {
+  console.log("adding order deets", action.orderDetails)
   return updateObject(state, {
     inputMap: action.orderDetails,
+  });
+}
+
+const removeOrderDetails = (state) => {
+  const clearedInputMap = [...state.inputMap];
+
+  clearedInputMap.forEach(e => {
+    e.value = '';
+  });
+
+  return updateObject(state, {
+    inputMap: clearedInputMap,
   });
 }
 

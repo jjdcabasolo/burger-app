@@ -146,7 +146,10 @@ class BurgerBuilder extends Component {
                     addOrder={this.props.onOrderAdded}
                     itemClick={this.props.itemClick}
                     form={this.state.form}
-                    clearBuilder={this.props.onIngredientsClear}
+                    clearBuilder={() => {
+                      this.props.onIngredientsClear()
+                      this.props.onOrderDetailsClear()
+                    }}
                   />
                 </div>
               </Grid.Column>
@@ -173,6 +176,7 @@ const mapDispatchToProps = dispatch => {
     onIngredientRemoved: (ingredientName) => dispatch(actions.ingredientRemoved(ingredientName)),
     onIngredientClear: (ingredientName) => dispatch(actions.ingredientClear(ingredientName)),
     onIngredientsClear: () => dispatch(actions.ingredientsClear()),
+    onOrderDetailsClear: () => dispatch(actions.orderDetailsRemoved()),
     onOrderAdded: (orderDetails, burgerIngredients, burgerPrice) => dispatch(actions.orderAdded(orderDetails, burgerIngredients, burgerPrice)),
   };
 }
