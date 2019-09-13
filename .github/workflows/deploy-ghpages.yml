@@ -11,16 +11,19 @@ jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@master
+    - name: [Checkout] Checking out master parmesanio
+      uses: actions/checkout@master
 
-    - name: build
+    - name: [Node] Setting up Node parmesanio
       uses: actions/setup-node@v1
       env:
         GHPAGES_DEPLOY_PARMESANIO: ${{ secrets.GHPAGES_DEPLOY_PARMESANIO }}
         GHPAGES_DEPLOY_USERNAMIO: jjdcabasolo
       with:
         node-version: '10.16'
-    - run: |
+        
+    - name: [Scripts] Starting parmesanio scripts
+      run: |
         npm install
         git config --global user.email "abasolojohnjourish@gmail.com"
         git config --global user.name ${GHPAGES_DEPLOY_USERNAMIO}
