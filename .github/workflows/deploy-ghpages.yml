@@ -24,7 +24,7 @@ jobs:
         git config --global user.email "abasolojohnjourish@gmail.com"
         git config --global user.name ${GHPAGES_DEPLOY_USERNAMIO}
         git remote rm origin
-        git remote add origin https://${GHPAGES_DEPLOY_USERNAMIO}:${GHPAGES_DEPLOY_PARMESANIO}@github.com/${GHPAGES_DEPLOY_USERNAMIO}/project.git
+        git remote add origin https://${GHPAGES_DEPLOY_USERNAMIO}:${GHPAGES_DEPLOY_PARMESANIO}@github.com/${GHPAGES_DEPLOY_USERNAMIO}/burger-app.git
         npm run deploy
       env:
         GHPAGES_DEPLOY_PARMESANIO: ${{ secrets.GHPAGES_DEPLOY_PARMESANIO }}
