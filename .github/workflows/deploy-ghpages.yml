@@ -16,9 +16,6 @@ jobs:
 
     - name: [Node] Setting up Node parmesanio
       uses: actions/setup-node@v1
-      env:
-        GHPAGES_DEPLOY_PARMESANIO: ${{ secrets.GHPAGES_DEPLOY_PARMESANIO }}
-        GHPAGES_DEPLOY_USERNAMIO: jjdcabasolo
       with:
         node-version: '10.16'
         
@@ -29,4 +26,6 @@ jobs:
         git config --global user.name ${GHPAGES_DEPLOY_USERNAMIO}
         git remote add origin https://${GHPAGES_DEPLOY_USERNAMIO}:${GHPAGES_DEPLOY_PARMESANIO}@github.com/${GHPAGES_DEPLOY_USERNAMIO}/project.git
         npm run deploy
-        
+      env:
+        GHPAGES_DEPLOY_PARMESANIO: ${{ secrets.GHPAGES_DEPLOY_PARMESANIO }}
+        GHPAGES_DEPLOY_USERNAMIO: jjdcabasolo
