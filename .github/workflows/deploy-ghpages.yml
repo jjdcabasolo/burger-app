@@ -1,5 +1,5 @@
 
-name: github pages
+name: GitHub Pages Deploy
 
 on:
   push:
@@ -18,14 +18,18 @@ jobs:
       with:
         node-version: '10.16'
         
-    - name: Starting parmesanio scripts
+    - name: Adding the ridiculously big and messy node_modules folder
+      run: npm install
+        
+    - name: Setting up Git parmesanio
       run: |
-        npm install
         git config --global user.email "abasolojohnjourish@gmail.com"
         git config --global user.name ${GHPAGES_DEPLOY_USERNAMIO}
         git remote rm origin
         git remote add origin https://${GHPAGES_DEPLOY_USERNAMIO}:${GHPAGES_DEPLOY_PARMESANIO}@github.com/${GHPAGES_DEPLOY_USERNAMIO}/burger-app.git
-        npm run deploy
       env:
         GHPAGES_DEPLOY_PARMESANIO: ${{ secrets.GHPAGES_DEPLOY_PARMESANIO }}
         GHPAGES_DEPLOY_USERNAMIO: jjdcabasolo
+        
+    - name: Deploying parmesanio to GitHub Pages
+      run: npm run deploy
