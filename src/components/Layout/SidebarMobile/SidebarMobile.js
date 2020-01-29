@@ -106,7 +106,7 @@ const sidebar = (props) => {
             as='div'
             content='FIGMA ¬'
             onClick={() => {
-              window.open('https://www.figma.com/file/jzozvMGv47MFT93TWZ62Gm/Burger-App', '_blank');
+              window.open('https://www.figma.com/file/5CxMPRIU0my8HTN0DRF8Gy', '_blank');
             }}
             id='sidebarmobile-item-figma'
           />
